@@ -7,7 +7,7 @@ Weidong Zhan
 Dept. of Chinese Language & Literature,
 Peking University
 
-Other sites that test LLM
-ChatGPT/LLM Errors Tracker
-https://researchrabbit.typeform.com/llmerrors?typeform-source=garymarcus.substack.com
+Other sites that test LLM<br>
+ChatGPT/LLM Errors Tracker<br>
+https://researchrabbit.typeform.com/llmerrors?typeform-source=garymarcus.substack.com<br>
 https://docs.google.com/spreadsheets/d/1kDSERnROv5FgHbVN8z_bXH9gak2IXRtoqz0nwhrviCw/edit?usp=sharing
