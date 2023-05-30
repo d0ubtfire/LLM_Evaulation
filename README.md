@@ -6,3 +6,8 @@ Since OpenAI released ChatGPT at the end of November 2022, I have designed a var
 Weidong Zhan
 Dept. of Chinese Language & Literature,
 Peking University
+
+Other sites that test LLM
+ChatGPT/LLM Errors Tracker
+https://researchrabbit.typeform.com/llmerrors?typeform-source=garymarcus.substack.com
+https://docs.google.com/spreadsheets/d/1kDSERnROv5FgHbVN8z_bXH9gak2IXRtoqz0nwhrviCw/edit?usp=sharing
