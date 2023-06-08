@@ -1,0 +1,35 @@
+Model: GPT-4
+
+User
+请你给我讲3个英语笑话。谢谢！
+ChatGPT
+当然，我很高兴能讲给你听一些英语笑话。以下是我为你挑选的三个：
+
+为什么电脑永远不会抓感冒？
+答案：因为它有 Windows（窗户）!
+
+一只蚂蚁和一只大象都跳楼，哪个先着地？
+答案：大象，因为蚂蚁要先下车。
+
+为什么篮球队的球员不应该开商店？
+答案：因为他们会一直把抛物放进篮子里。
+
+希望你喜欢这些笑话！
+
+
+User
+你确定你刚才讲的是英语笑话？
+
+ChatGPT
+对不起，我犯了一个错误。你问的是英语笑话，而我给你的是中文笑话。以下是三个英语笑话：
+
+Why don't scientists trust atoms?
+Answer: Because they make up everything!
+
+Why couldn't the bicycle stand up by itself?
+Answer: It was two tired!
+
+What do you call fake spaghetti?
+Answer: An impasta!
+
+很抱歉之前的误解，希望你会喜欢这些真正的英语笑话。
