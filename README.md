@@ -13,3 +13,7 @@ Other sites that test LLM<br>
 ChatGPT/LLM Errors Tracker<br>
 https://researchrabbit.typeform.com/llmerrors?typeform-source=garymarcus.substack.com<br>
 https://docs.google.com/spreadsheets/d/1kDSERnROv5FgHbVN8z_bXH9gak2IXRtoqz0nwhrviCw/edit?usp=sharing
+
+Sparks of Artificial General Intelligence: Early experiments with GPT-4  
+https://arxiv.org/abs/2303.12712
+https://www.youtube.com/watch?v=qbIk7-JPB2c
