@@ -19,7 +19,7 @@ https://arxiv.org/abs/2303.12712<br>
 https://www.youtube.com/watch?v=qbIk7-JPB2c
 
 <b>Theory of Mind May Have Spontaneously Emerged in Large Language Models</b><br>
-https://arxiv.org/abs/2302.02083<br><br>
+https://arxiv.org/abs/2302.02083<br>
 
 <b>AGIEval: A Human-Centric Benchmark for Evaluating Foundation Models</b><br> 
 https://arxiv.org/abs/2304.06364
