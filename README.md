@@ -9,11 +9,11 @@ Dept. of Chinese Language & Literature,<br>
 Peking University<br>
 http://ccl.pku.edu.cn/doubtfire<br><br>
 
-Other sites that test LLM<br>
-ChatGPT/LLM Errors Tracker<br>
+Other sites that test LLM<br><br>
+<b>ChatGPT/LLM Errors Tracker</b><br>
 https://researchrabbit.typeform.com/llmerrors?typeform-source=garymarcus.substack.com<br>
 https://docs.google.com/spreadsheets/d/1kDSERnROv5FgHbVN8z_bXH9gak2IXRtoqz0nwhrviCw/edit?usp=sharing
 
-Sparks of Artificial General Intelligence: Early experiments with GPT-4   
+<b>Sparks of Artificial General Intelligence: Early experiments with GPT-4</b>   
 https://arxiv.org/abs/2303.12712<br>
 https://www.youtube.com/watch?v=qbIk7-JPB2c
