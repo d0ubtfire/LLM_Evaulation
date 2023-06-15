@@ -1,0 +1,71 @@
+User
+请翻译下面两个句子：
+（1）他们有时候不得不同夷狄搏斗，正如有时候不得不同禽兽搏斗。
+（2）他们有时候不得水间夷狄搏斗，止知有时候水得不同禽曾搏斗。
+
+ChatGPT
+（1）Sometimes they have to fight with barbarians, just as sometimes they have to fight with wild beasts.
+
+（2）Sometimes they have to fight with barbarians in water, only knowing that sometimes the water prevents them from fighting with birds and beasts.
+
+User
+请把下面的句子翻译成英文：
+（1）拿破仑说“不想当将军的士兵不是好士兵”。
+（2）拿波轮说“不想当将军的士兵不是好士兵”。
+（3）拿泼伦说“不想当将军的土乒不是好士乓”。
+（4）拿破仑说“不想当将军的土乓不是好士乒”。
+（5）拿破仑说“不想当将军的世乓不是好世乒”。
+
+ChatGPT
+(1) Napoleon said, "A soldier who doesn't want to be a general is not a good soldier."
+
+(2) Napoleon said, "A soldier who doesn't want to be a general is not a good soldier."
+
+(3) Napoléon said, "A table tennis player who doesn't want to be a general is not a good table tennis player."
+
+(4) Napoleon said, "A table tennis player who doesn't want to be a general is not a good table tennis player."
+
+(5) Napoleon said, "A table tennis player who doesn't want to be a general is not a good table tennis player."
+
+
+User
+请把下面的句子翻译成英文：
+（1）拿破仑说“不想当将军的士兵不是好士兵”。
+（2）拿着破轮说“不想当将军的土乒不是好土乓”。
+（3）拿着破仑说“不想当将军的土乒不是好土乓”。
+（4）拿着破仑说“不想当将军的士兵不是好士兵”。
+
+ChatGPT
+(1) Napoleon said, "A soldier who doesn't want to be a general is not a good soldier."
+(2) Holding a broken wheel, Napoleon said, "A clay ping pong ball that doesn't want to be a general is not a good clay ping pong ball."
+(3) Holding a broken wheel, Napoleon said, "A clay ping pong ball that doesn't want to be a general is not a good clay ping pong ball."
+(4) Holding a broken wheel, Napoleon said, "A soldier who doesn't want to be a general is not a good soldier."
+
+
+
+
+
+User
+请把下面的句子翻译成英文：
+（1）拿破仑说“不想当将军的士兵不是好士兵”。
+（2）拿着破轮说“不想当将军的土乒不是好土乓”。
+（3）拿着破仑说“不想当将军的土乒不是好土乓”。
+（4）拿着破仑说“不想当将军的士兵不是好士兵”。
+（5）拿着泼仑说“不想当将军的世乒不是好土兵”。
+（6）拿破仑说“不想当蒋军的士兵不是好士兵”。
+（7）拿着波轮说“不想当奖君的士兵不是好士兵”。
+（8）拿着波轮说“不想当奖君的土兵不是好士兵”。
+（9）拿着波轮说“不想当奖君的土兵不是好土兵”。
+（10）拿着破仑说“不想当奖君的土乒不是好土乓”。
+
+ChatGPT
+(1) Napoleon said, "A soldier who doesn't want to be a general is not a good soldier."
+(2) Holding a broken wheel, Napoleon said, "A clay ping pong ball that doesn't want to be a general is not a good clay ping pong ball."
+(3) Holding a broken wheel, Napoleon said, "A clay ping pong ball that doesn't want to be a general is not a good clay ping pong ball."
+(4) Holding a broken wheel, Napoleon said, "A soldier who doesn't want to be a general is not a good soldier."
+(5) Holding a splashing Napoleon said, "A world ping pong ball that doesn't want to be a general is not a good clay soldier."
+(6) Napoleon said, "A soldier who doesn't want to be a general of the Jiang army is not a good soldier."
+(7) Holding a rotating wheel, Napoleon said, "A soldier who doesn't want to be a prize lord is not a good soldier."
+(8) Holding a rotating wheel, Napoleon said, "A clay soldier who doesn't want to be a prize lord is not a good soldier."
+(9) Holding a rotating wheel, Napoleon said, "A clay soldier who doesn't want to be a prize lord is not a good clay soldier."
+(10) Holding a broken wheel, Napoleon said, "A clay ping pong ball that doesn't want to be a prize lord is not a good clay ping pong ball."
