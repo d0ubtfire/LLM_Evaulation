@@ -1,0 +1,73 @@
+User：
+请把下面两个句子翻译成英文：
+(1) 这次讨论会把绝大多数人都搞晕了。
+(2) 这次讨论会把绝大多数人都搞晕的。
+
+ChatGPT：
+(1) This discussion has confused the vast majority of people.
+(2) The vast majority of people were confused by this discussion.
+
+对比：GPT-4
+
+User：
+请把下面两个句子翻译成英文：
+(1) 这次讨论会把绝大多数人都搞晕了。
+(2) 这次讨论会把绝大多数人都搞晕的。
+(1) This discussion has confused the vast majority of people.
+(2) This discussion is the one that has confused the vast majority of people.
+
+
+User：
+请把下面句子翻译成英文：
+孩子在学校被老师批评，作业经常迟交，理由不是钢笔没水了，就是圆珠笔没油了。
+
+ChatGPT：
+The child is criticized by the teacher at school, and often hands in homework late. The reasons given are either that the pen is out of ink, or the ballpoint pen has no oil.
+
+
+User：
+请把下面句子翻译成英文：
+这位已过不惑之年的上海爱建信托投资公司总经理精力过人。早晨鸡鸣即起，晚上三更方睡。
+
+ChatGPT：
+This middle-aged general manager of Shanghai Aijian Trust Investment Company is full of energy. He wakes up at dawn and sleeps around 3 a.m. at night.
+
+User：
+请把下面句子翻译成英文：
+（1）赵乙，就是宋一丹现任老公赵吉玉，与其前妻李涛的女儿。
+（2）赵乙，就是宋一丹现任老公赵吉玉，与其前妻李涛的女儿，一起移民美国了。
+
+ChatGPT：
+(1) Zhao Yi is the daughter of Li Tao, the former wife of Zhao Jiyu, who is currently the husband of Song Yidan.
+(2) Zhao Yi, the daughter of Li Tao, the former wife of Zhao Jiyu, who is currently the husband of Song Yidan, has emigrated to the United States together.
+
+对比GPT-4：
+
+User：
+请把下面句子翻译成英文：
+（1）赵乙，就是宋一丹现任老公赵吉玉，与其前妻李涛的女儿。
+（2）赵乙，就是宋一丹现任老公赵吉玉，与其前妻李涛的女儿，一起移民美国了。
+
+(1) Zhao Yi is the daughter of Zhao Jiyu, the current husband of Song Yidan, and his ex-wife Li Tao.
+(2) Zhao Yi, the daughter of Zhao Jiyu who is Song Yidan's current husband and his ex-wife Li Tao, has immigrated to the United States together.
+
+
+User：
+请把下面句子翻译成英文：
+比赛双方不是抽签产生的吗？还是说你想抽谁就能抽到谁？那你真是手眼通天了。
+
+ChatGPT：
+Wasn't the outcome of the game determined by drawing lots between the two sides? Or are you saying that you can draw whoever you want? If so, you must be really lucky or have great connections.
+
+User：
+请把下面句子翻译成英文：
+（1）他们三个人都读完了张老师要求今天必须完成的三篇文章。
+（2）他们三个人都抄完了张老师要求今天必须完成的三篇文章。
+（3）他们三个人都翻完了张老师要求今天必须完成的三篇文章。
+（4）他们三个人都改完了张老师要求今天必须完成的三篇文章。
+
+ChatGPT：
+(1) All three of them finished the three articles that Mr. Zhang required to be completed today.
+(2) All three of them copied the three articles that Mr. Zhang required to be completed today.
+(3) All three of them translated the three articles that Mr. Zhang required to be completed today.
+(4) All three of them edited the three articles that Mr. Zhang required to be completed today.

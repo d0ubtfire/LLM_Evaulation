@@ -1,0 +1,36 @@
+
+User：
+请把下面这段话翻译成英文：
+爱和爱过，只有一字之差，意思却截然不同。
+那么，现在请你告诉我，你是爱我，还是爱过我呢？
+
+ChatGPT：
+Love and loved, only one word different, but their meanings are completely different. So, can you tell me now, do you love me or have you loved me before?
+
+User：
+请把下面这段话翻译成英文：
+像他这样的人是不会考虑你说的要不要命的问题的，他只知道只要不要命地干，就能得到好处。
+
+ChatGPT：
+People like him won't consider whether what you say is a matter of life or death. He only knows that as long as he works relentlessly, he can reap benefits.
+
+User：
+请把下面这两段话翻译成英文：
+（1）西周和东周是怎么划分的，两周有什么区别？
+（2）下面是一周前的一条百度知道：某地机场飞机起飞后，都要在机场上空盘旋一周后再离开，请问这是为什么？
+
+ChatGPT：
+(1) How are the Western Zhou and Eastern Zhou divided, and what are the differences between the two periods?
+
+(2) Here's a Baidu question from a week ago: Why do planes taking off from an airport in a certain location have to circle above the airport for a week before leaving?
+
+
+User：
+请把下面这两句话翻译成英文：
+（1）他喜欢拍马，各色领导他都拍了个遍。
+（2）他喜欢拍马，各地的马他都拍了个遍。
+
+ChatGPT：
+(1) He likes to flatter people and has flattered leaders of various kinds.
+
+(2) He likes to flatter people and has flattered horses from all over the place. (Note: This sentence is a play on words, as "拍马" can mean both "to flatter someone" and "to take a picture of a horse.")
