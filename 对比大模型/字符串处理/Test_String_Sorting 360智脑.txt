@@ -1,0 +1,7 @@
+User
+
+Given a string over an alphabet of fixed size (max length is 9 in our case), return the sorted string. Here is an example, X is the input and Y is the output. X = 421302214, Y = 011222344 Please do the same operation of sorting for the following strings: （1）X=389，Y=？ （2）X=0398，Y=？ （3）X=30983，Y=？ （4）X=830392，Y=？ （5）X=1120013，Y=？ （6）X=91910909，Y=？ （6）X=212100137，Y=？
+
+360智脑
+
+Sorted output for each input: (1) X=389,Y=398 (2) X=0398,Y=0398 (3) X=30983,Y=30893 (4) X=830392,Y=398830 (5) X=1120013,Y=12000113 (6) X=91910909,Y=91091909 (7) X=212100137,Y=210212013

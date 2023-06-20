@@ -1,0 +1,27 @@
+Model: GPT-4
+
+User
+Given a string over an alphabet of fixed size (max length is 9 in our case), return the sorted string.
+Here is an example, X is the input and Y is the output.
+X = 421302214,  Y = 011222344
+Please do the same operation of sorting for the following strings:
+（1）X=389，Y=？
+（2）X=0398，Y=？
+（3）X=30983，Y=？
+（4）X=830392，Y=？
+（5）X=1120013，Y=？
+（6）X=91910909，Y=？
+（6）X=212100137，Y=？
+
+
+ChatGPT
+
+Sure, the task is to sort each character in the string in ascending order. Here are the answers:
+
+（1）X=389，Y=389
+（2）X=0398，Y=0389
+（3）X=30983，Y=03389
+（4）X=830392，Y=023389
+（5）X=1120013，Y=0011123
+（6）X=91910909，Y=0011999
+（7）X=212100137，Y=011122137
