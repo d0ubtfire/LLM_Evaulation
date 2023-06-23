@@ -1,0 +1,27 @@
+
+Weidong_Zhan
+  5:42 PM
+请数一数下面两个句子各有多少个汉字。
+（1）去年入境日本游客达到一千万。
+（2）去年入境的日本游客达到一千万。
+
+
+Claude
+APP  5:42 PM
+第一个句子共有17个汉字。
+第二个句子共有18个汉字。
+
+
+
+Weidong_Zhan
+  5:42 PM
+请将下面两个句子翻译为英文：
+（1）去年入境日本游客达到一千万。
+（2）去年入境的日本游客达到一千万。
+
+
+Claude
+APP  5:42 PM
+翻译如下:
+(1) Last year, the number of tourists entering Japan reached 10 million.
+(2) Last year, the number of Japanese tourists entering the country reached 10 million.

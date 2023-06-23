@@ -1,0 +1,21 @@
+Model: GPT-4
+
+User
+请数一数下面两个句子各有多少个汉字。
+（1）去年入境日本游客达到一千万。
+（2）去年入境的日本游客达到一千万。
+
+ChatGPT
+（1）这个句子有11个汉字：“去年入境日本游客达到一千万。”
+
+（2）这个句子有12个汉字：“去年入境的日本游客达到一千万。”
+
+
+User
+请将下面两个句子翻译为英文：
+（1）去年入境日本游客达到一千万。
+（2）去年入境的日本游客达到一千万。
+
+ChatGPT
+（1）The number of tourists who entered Japan last year reached ten million.
+（2）The number of Japanese tourists who entered last year reached ten million.
