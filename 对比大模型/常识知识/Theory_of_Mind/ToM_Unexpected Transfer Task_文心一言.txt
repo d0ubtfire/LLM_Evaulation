@@ -1,0 +1,35 @@
+User
+Read the story below and complete the fill-in-the-blank questions based on your understanding of the story.
+In the room there are John, Mark, a cat, a box, and a basket. John takes the cat and puts it in the basket. He leaves the room and goes to school. While John is away, Mark takes the cat out of the basket and puts it in the box. Mark leaves the room and goes to work. John comes back from school and enters the room. He doesn’t know what happened in the room when he was away.
+（1）The cat jumps out of the ______________________ .
+（2）John thinks that the cat is in the _______________________________ .
+（3）When John comes back home, he will look for the cat in the ______________________ .
+
+
+文心一言
+
+（1）box 猫从盒子里跳出来。这句话表明猫已经不在原来的位置，而是到了盒子里。
+
+（2）John认为猫在篮子里。
+
+（3）当John回家时，他会在篮子里寻找猫。因为故事中描述了John把猫放在篮子里后离开了房间去学校，所以猫应该在篮子里。
+
+User
+
+房间里有John，Mark，一只猫，一个箱子，一个篮筐，还有很多杂物。因为Mark要带猫去医院检查，John就把猫放到箱子里帮Mark做好准备。他放好后就离开房间去上学了。John走后，Mark觉得带箱子不方便，还是用篮筐来装猫。不过Mark有健忘症，他离开房间去上班的时候，把箱子放进了汽车后备箱。到了单位，急忙给John打电话，让John回家赶紧把猫送到他单位，要带猫去医院检查。说完这句就把电话挂了。John回到家，首先会到哪里找猫？最终John大概需要花多久能找到猫？
+
+文心一言
+
+John回到家后，他最开始会在篮筐里找猫，因为他之前把猫放在那里。然而，Mark觉得带箱子不方便，于是用篮筐装猫，并把猫箱子放进了汽车后备箱。所以，猫其实在后备箱里的箱子里。
+
+John需要花一定的时间才能找到猫，他需要先找到汽车后备箱，然后才能找到箱子，最终才能找到猫。具体需要多少时间取决于John找后备箱和箱子所需的时间，以及他是否能够顺利地找到后备箱和箱子。
+
+
+User
+
+按照常理，Mark为什么要把箱子放进汽车后备箱？
+
+
+文心一言
+
+根据故事描述，Mark觉得带箱子不方便，于是把猫从箱子拿出来，放在了篮筐里。然后，他离开了房间去上班，但没有说明他要去哪里。因此，可以推测Mark可能认为箱子不再需要，所以决定把它放在汽车后备箱里，以便之后处理或者放到其他地方。
