@@ -1,0 +1,19 @@
+Weidong_Zhan
+  10:40 AM
+做匀速直线运动的小车在平面上受几个力？
+
+
+Claude
+APP  10:40 AM
+Reminder: While direct messaging with Claude, you can type /reset to start a new conversation. By default, Claude will remember your whole conversation, which will affect its responses.
+10:40
+做匀速直线运动的小车在平面上主要受到以下几个力:
+1. 拖拉力(F)
+这是驱动小车运动的力,通常来自发动机等动力装置,使小车保持匀速运动。
+2. 支撑力(N)
+这是地面对小车的支持力,使小车不会下沉,大小等于小车重量的数值。
+3. 滚动摩擦力(f)
+轮胎与地面间存在的摩擦力,方向与运动方向相反,会抵消一部分拖拉力。
+4. 空气阻力(Fax)
+空气对运动中的小车产生的阻力,随速度的增大而增大。
+在匀速运动时,这些力达到平衡,拖拉力等于滚动摩擦力与空气阻力之和,小车运动速度保持不变。如果这些力失去平衡,小车就会加速或减速。
