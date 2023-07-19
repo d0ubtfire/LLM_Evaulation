@@ -1,0 +1,28 @@
+User
+
+请你完成一个成语接龙游戏。游戏的规则是我给你一个成语，然后你需要用我给出的成语的最后一个字作为下一个成语的第一个字，这样依次进行下去，接龙3次，完成一次游戏。我下面给你3个成语，按照上面的规则完成3次成语接龙。一共填出9个成语。
+五谷丰登 —— （                ） ——  （                      ）  ——   （                 ）
+表里如一 —— （                ） ——  （                      ）  ——   （                 ）
+鸟语花香 —— （                ） ——  （                      ）  ——   （                 ）
+
+
+llama-2-13b-chat
+
+Sure! I'd be happy to help you with the Chinese idiom chain game. Here are my answers:
+
+五谷丰登 (wǔ gǔ yí dēng) - "Five grains grow in abundance"
+Next idiom: 表里如一 (biǎo lǐ rú yī) - "Inside the pagoda, it's like one"
+
+表里如一 (biǎo lǐ rú yī) - "Inside the pagoda, it's like one"
+Next idiom: 鸟语花香 (niǎo yǔ huā xiāng) - "Birds speak of flowers' fragrance"
+
+鸟语花香 (niǎo yǔ huā xiāng) - "Birds speak of flowers' fragrance"
+Next idiom: 一帆顺风 (yī fān shùn fēng) - "Sailing with the wind"
+
+So, the complete chain of idioms is:
+
+五谷丰登 (wǔ gǔ yí dēng)
+表里如一 (biǎo lǐ rú yī)
+鸟语花香 (niǎo yǔ huā xiāng)
+一帆顺风 (yī fān shùn fēng)
+I hope you enjoyed the game!
