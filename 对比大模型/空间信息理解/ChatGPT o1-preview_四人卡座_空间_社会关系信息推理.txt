@@ -1,0 +1,63 @@
+今天是罗小芬的生日，她的丈夫和父母特意设宴为他庆祝。四个人进了好客酒家，选了一个靠窗临街的四人卡座坐下。卡座分列一张长方形桌子长边两侧，每排卡座上坐两人，面对面而坐。罗小芬坐在靠窗的位置，脸上洋溢着幸福的笑容。她的父亲罗淮坐在他正对面。坐在罗淮斜对面的是他的女婿李夕明。罗小芬的母亲王玉坐在自己丈夫罗淮的左手边。
+
+（1）坐在王玉正对面的是______?
+A.罗淮 B.罗小芬 C.李夕明 D.以上选项都不是
+
+（2）坐在罗小芬斜对面的是李夕明的______?
+A.岳父 B.丈母娘 C.女儿 D.以上选项都不是
+
+（3）坐在罗淮对侧的有他的______?
+A.女婿 B.儿子 C.女儿 D.以上选项都不是
+
+ChatGPT o1-preview
+
+Based on the provided seating arrangement, let's reconstruct the seating positions:
+
+- **Seat 1 (Window Side)**: **Luo Xiaofen**
+- **Seat 2 (Next to Luo Xiaofen)**: **Li Ximing (her husband)**
+- **Seat 3 (Opposite Luo Xiaofen)**: **Luo Huai (her father)**
+- **Seat 4 (Next to Luo Huai)**: **Wang Yu (her mother)**
+
+Now, let's answer the questions:
+
+### Question (1)
+**Who is sitting directly opposite Wang Yu?**
+
+- Wang Yu is in Seat 4.
+- Directly opposite Seat 4 is Seat 2, occupied by **Li Ximing**.
+
+**Answer**: **C. Li Ximing**
+
+---
+
+### Question (2)
+**The person sitting diagonally opposite Luo Xiaofen is ______ of Li Ximing.**
+
+- Diagonally opposite Luo Xiaofen (Seat 1) is Wang Yu (Seat 4).
+- Wang Yu is **Li Ximing's mother-in-law**.
+
+**Answer**: **B. Mother-in-law**
+
+---
+
+### Question (3)
+**On the opposite side of Luo Huai sits his ______.**
+
+- Opposite Luo Huai (Seat 3) are Seats 1 and 2.
+- **Seat 1**: His **daughter**, Luo Xiaofen.
+- **Seat 2**: His **son-in-law**, Li Ximing.
+- Since both are present, but the daughter is directly opposite, the best answer is **daughter**.
+
+**Answer**: **C. Daughter**
+
+---
+
+**Final Answers:**
+
+1. **C. 李夕明 (Li Ximing)**
+2. **B. 丈母娘 (Mother-in-law)**
+3. **C. 女儿 (Daughter)**
+
+---
+
+**Question 1 Answer:** C. 李夕明  **Question 2 Answer:** B. 丈母娘  **Question 3 Answer:** C. 女儿
