@@ -11,7 +11,6 @@ http://ccl.pku.edu.cn/doubtfire<br><br>
 
 Various evaluations of large language models<br><br>
 <b>ChatGPT/LLM Errors Tracker</b><br>
-https://researchrabbit.typeform.com/llmerrors?typeform-source=garymarcus.substack.com<br>
 https://docs.google.com/spreadsheets/d/1kDSERnROv5FgHbVN8z_bXH9gak2IXRtoqz0nwhrviCw/edit?usp=sharing
 
 <b>Sparks of Artificial General Intelligence: Early experiments with GPT-4</b>
