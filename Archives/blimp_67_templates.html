@@ -1,0 +1,622 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'><style type='text/css'>html {overflow-x: initial !important;}</style>
+<style type='text/css'  id="style-base">:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, "Segoe UI Emoji", "SF Pro", sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p *, #write.first-line-indent svg * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+img:not([height]) { height: auto; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+svg sub, svg sup { position: static; }
+.nodeLabel p { padding-right: 2px; padding-left: 2px; }
+.typora-export .nodeLabel p { padding-right: 0px; padding-left: 0px; }
+foreignobject { overflow: visible; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+li p { orphans: 1; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; position: relative; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: medium !important; border-style: none !important; border-color: currentcolor !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.mermaid-svg { margin: auto; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+</style>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&amp;subset=latin,latin-ext' type='text/css' />
+<style type='text/css'  id="style-theme_css">:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', 'SF Pro', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    pre {
+        page-break-inside: avoid;
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.mac-os #write{
+    caret-color: AccentColor;
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+</style>
+<style type='text/css'  id="style-lp">ol, ul {padding-left: 40px}</style>
+
+<title>blimp_67_templates</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='blimp-67个问题模板索引'><span>BLiMP 67个问题模板索引</span></h1><blockquote><p><span>《BLiMP如何测试大模型的英语语法能力》配套资料</span><br/><span>资料版本：BLiMP官方仓库当前公开的67个数据文件</span></p></blockquote><p><span>这份索引回答一个比正文更细的问题：BLiMP所说的“67个问题模板”分别在测什么？每项保留官方UID，便于读者回到原始数据文件核查；中文名称是依据测试对立给出的说明性译名，不是官方另行发布的中文标签。</span></p><p>&nbsp;</p><p><a href='.appendix_blimp_glossary.html'><span>BLiMP语言学概念导读</span></a></p><p>&nbsp;</p><h2 id='阅读说明'><span>阅读说明</span></h2><ul><li><p><strong><span>样例来源</span></strong><span>：每项均列出相应官方JSONL文件的第1组句对，因此可以复核，不是另造例句。星号表示模板设定的不可接受句。程序生成句有时语义生硬；判断重点是目标语法对立。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2成绩来自Warstadt等（2020）的官方结果；“人工抽样一致率”是母语者判断与模板标准答案相符的比例。人工实验只抽取每个模板5组题，每组约20次判断，并非人类完成全部1,000组。</span></p></li><li><p><strong><span>分数用途</span></strong><span>：这里的分数用于理解BLiMP发布时各模板的难度，不代表2026年头部模型的最新水平。不同提示、计分和题目子集的结果不能直接与它横向排名。</span></p></li><li><p><strong><span>分类说明</span></strong><span>：官方数据把两个生命度选择模板的字段写作 </span><code>s-selection</code><span>；原论文和本文将它们归入“论元结构”，因此12类数量仍为2、9、7、5、8、2、7、2、8、7、4、6，共67项。</span></p></li></ul><p>&nbsp;</p><p>&nbsp;</p><h2 id='一照应语一致2项'><span>一、照应语一致（2项）</span></h2><p><span>这组题只改变反身代词的性别或数特征，检查它是否与先行词匹配。它测“形式一致”，不等于约束理论的全部内容。</span></p><h3 id='1-anaphorgenderagreement｜反身代词的性别一致'><span>1. </span><code>anaphor_gender_agreement</code><span>｜反身代词的性别一致</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：指回女性人名时，应选择 </span><em><span>herself</span></em><span> 还是 </span><em><span>himself</span></em><span>？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Katherine can&#39;t help herself.</span></em><span>　负：</span><span>*</span><em><span>Katherine can&#39;t help himself.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：反身代词与先行词 </span><em><span>Katherine</span></em><span> 的传统语法性别特征要一致。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：该模板使用二元性别词表和人名刻板对应，不能代表非二元代词或真实人物的性别认同。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 99.4%；人工抽样一致率96.0%。</span></p></li></ul><h3 id='2-anaphornumberagreement｜反身代词的数一致'><span>2. </span><code>anaphor_number_agreement</code><span>｜反身代词的数一致</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：单数先行词能否与复数反身代词 </span><em><span>themselves</span></em><span> 搭配？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Susan revealed herself.</span></em><span>　负：</span><span>*</span><em><span>Susan revealed themselves.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：模板要求单数 </span><em><span>Susan</span></em><span> 与单数 </span><em><span>herself</span></em><span> 一致。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：当代英语中的单数 </span><em><span>they/themself/themselves</span></em><span> 存在变异；本题采用BLiMP设定的主流美国英语标签。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 99.2%；人工抽样一致率99.0%。</span></p></li></ul><h2 id='二论元结构9项'><span>二、论元结构（9项）</span></h2><p><span>论元结构说明一个动词允许或要求哪些参与者，以及这些参与者以什么句法形式出现。前两项还操纵主语或被动施事的语义选择限制。</span></p><h3 id='3-animatesubjectpassive｜被动句施事的生命度选择'><span>3. </span><code>animate_subject_passive</code><span>｜被动句施事的生命度选择</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：被动句 </span><em><span>by</span></em><span> 短语中的成分能否充当该动词的施事？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Amanda was respected by some waitresses.</span></em><span>　负：</span><span>*</span><em><span>Amanda was respected by some picture.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：能实施“尊重”行为的是有生命施事，</span><em><span>picture</span></em><span>不符合该语义角色要求。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：这是语义选择限制，不是所有被动句都要求有生命施事；拟人和特殊语境也会改变判断。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 76.6%；人工抽样一致率86.0%。</span></p></li></ul><h3 id='4-animatesubjecttrans｜及物句主语的语义选择'><span>4. </span><code>animate_subject_trans</code><span>｜及物句主语的语义选择</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：主语能否成为该动词所描述行为的合理发出者？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Tina revealed Margaret.</span></em><span>　负：</span><span>*</span><em><span>The horse revealed Margaret.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：模板词库把人类主语与特定认知或交际行为相配，把不符合选择限制的主语设为负例。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：生命度不是单一充分条件；例句可在故事、拟人或隐喻语境中获得不同接受度。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 84.9%；人工抽样一致率87.0%。</span></p></li></ul><h3 id='5-causative｜使役交替'><span>5. </span><code>causative</code><span>｜使役交替</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：一个动词能否表示“主语使宾语发生某种变化”？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Aaron breaks the glass.</span></em><span>　负：</span><span>*</span><em><span>Aaron appeared the glass.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：</span><em><span>break</span></em><span>可用于“施事使玻璃破裂”的使役结构；</span><em><span>appear</span></em><span>通常不能直接带宾语形成同类结构。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：该题同时涉及动词词义和句法框架，不能只靠是否“及物”概括全部差别。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 78.2%；人工抽样一致率98.0%。</span></p></li></ul><h3 id='6-dropargument｜宾语省略许可'><span>6. </span><code>drop_argument</code><span>｜宾语省略许可</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：动词后原本可出现的宾语，能否在没有上下文时省掉？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Travis is touring.</span></em><span>　负：</span><span>*</span><em><span>Travis is revealing.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：模板把可作绝对用法的动词与通常要求明确宾语的动词对比。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：论元能否省略高度依赖词义和语境；在“秘密已经揭晓”等特定语境中，负例动词可能获得省略读法。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 80.7%；人工抽样一致率86.9%。</span></p></li></ul><h3 id='7-inchoative｜起始式反使役式'><span>7. </span><code>inchoative</code><span>｜起始式/反使役式</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：变化动词能否不用施事，只说某物自行进入某种状态？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Patricia had changed.</span></em><span>　负：</span><span>*</span><em><span>Patricia had forgotten.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：</span><em><span>change</span></em><span>可形成“某人/物发生变化”的起始式；模板设定中的 </span><em><span>forget</span></em><span> 需要遗忘对象，不能按同一交替分析。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：部分动词有多义用法；某个读法能否不带宾语，不代表该词所有读法都相同。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 65.9%；人工抽样一致率82.0%。</span></p></li></ul><h3 id='8-intransitive｜不及物框架完整性'><span>8. </span><code>intransitive</code><span>｜不及物框架完整性</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：句尾结构是否已经满足动词或介词的补足要求？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Todd can&#39;t yawn.</span></em><span>　负：</span><span>*</span><em><span>Todd can&#39;t walk through.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：</span><em><span>yawn</span></em><span>可以单独构成不及物谓语；该模板中的 </span><em><span>walk through</span></em><span> 把 </span><em><span>through</span></em><span> 用作要求后接宾语的介词，句子因缺少补足语而不完整。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：</span><em><span>through</span></em><span>也可作副词；在支持该读法的语境里，负例的接受度可能提高。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 84.2%；人工抽样一致率90.0%。</span></p></li></ul><h3 id='9-passive1｜带施事短语的被动许可'><span>9. </span><code>passive_1</code><span>｜带施事短语的被动许可</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：一个动词能否形成“主语被某人做某事”的被动句？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Lucille&#39;s sisters are confused by Amy.</span></em><span>　负：</span><span>*</span><em><span>Lucille&#39;s sisters are communicated by Amy.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：可带宾语的 </span><em><span>confuse</span></em><span> 能把宾语提升为被动主语；模板中的 </span><em><span>communicate</span></em><span> 不能按同一及物框架被动化。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：判断针对给定词义和配价；专业语域中的 </span><em><span>communicate a message</span></em><span> 不等于 </span><em><span>communicate a person</span></em><span>。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 89.3%；人工抽样一致率95.0%。</span></p></li></ul><h3 id='10-passive2｜不带施事短语的被动许可'><span>10. </span><code>passive_2</code><span>｜不带施事短语的被动许可</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：去掉 </span><em><span>by</span></em><span> 短语后，过去分词能否独立组成被动谓语？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>A lot of nieces of some actor aren&#39;t scared.</span></em><span>　负：</span><span>*</span><em><span>A lot of nieces of some actor aren&#39;t wept.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：</span><em><span>scare</span></em><span>可及物并形成被动；</span><em><span>weep</span></em><span>通常不及物，不能把对象提升为被动主语。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：表面上的 </span><em><span>be + 分词</span></em><span> 也可能是形容词结构；本模板把它作为动词配价诊断。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 90.2%；人工抽样一致率86.0%。</span></p></li></ul><h3 id='11-transitive｜直接宾语许可'><span>11. </span><code>transitive</code><span>｜直接宾语许可</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：动词后能否直接接一个名词短语宾语？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Some turtles alarm Kimberley.</span></em><span>　负：</span><span>*</span><em><span>Some turtles come here Kimberley.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：</span><em><span>alarm</span></em><span>是及物动词；</span><em><span>come here</span></em><span>后不能再按同一结构直接接 </span><em><span>Kimberley</span></em><span>。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：测试的是直接宾语框架，不是否认不及物动词可带介词短语、方向语或其他附加成分。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 86.0%；人工抽样一致率99.0%。</span></p></li></ul><h2 id='三约束7项'><span>三、约束（7项）</span></h2><p><span>这组以反身代词为主要诊断材料，考查它的先行词是否满足结构统领、局部性、格和一致等条件。官方名称中的“Principle A”即约束理论原则A。</span></p><h3 id='12-principleaccommand｜原则a与结构统领'><span>12. </span><code>principle_A_c_command</code><span>｜原则A与结构统领</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：反身代词应与主句主语匹配，还是能由嵌在主语内部的名词决定？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>A lot of patients who can sell some couch didn&#39;t investigate themselves.</span></em><span>　负：</span><span>*</span><em><span>A lot of patients who can sell some couch didn&#39;t investigate itself.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：主句复数主语 </span><em><span>patients</span></em><span>结构统领宾语反身代词；主语内部的单数 </span><em><span>couch</span></em><span>不能越出关系从句充当其先行词。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：表面差别表现为数一致，但模板用一致特征来显现潜在的结构统领关系。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 73.7%；人工抽样一致率86.0%。</span></p></li></ul><h3 id='13-principleacase1｜反身代词与主格位置'><span>13. </span><code>principle_A_case_1</code><span>｜反身代词与主格位置</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：有限从句的明说主语位置能否直接使用反身代词？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>The teenagers explain that they aren&#39;t breaking all glasses.</span></em><span>　负：</span><span>*</span><em><span>The teenagers explain that themselves aren&#39;t breaking all glasses.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：嵌入有限从句需要主格代词 </span><em><span>they</span></em><span>；</span><em><span>themselves</span></em><span>不能在这里独立充当主语。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：英语口语中的强调性反身代词用法另有条件，不等于本题的普通从句主语。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 100.0%；人工抽样一致率98.0%。</span></p></li></ul><h3 id='14-principleacase2｜非限定结构中的反身形式'><span>14. </span><code>principle_A_case_2</code><span>｜非限定结构中的反身形式</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：</span><em><span>imagine</span></em><span>后的反身成分应进入非限定结构，还是能直接接一个带时态的动词？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Eric imagines himself taking every rug.</span></em><span>　负：</span><span>*</span><em><span>Eric imagines himself took every rug.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：</span><em><span>himself</span></em><span>可作为非限定小句 </span><em><span>taking…</span></em><span> 的主语/主句动词的宾格成分；后接过去式 </span><em><span>took</span></em><span> 时需要另一种有限从句结构。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：该模板把格与有限性一并操纵，不能把分数解释为单独的“反身代词知识”。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 94.8%；人工抽样一致率96.0%。</span></p></li></ul><h3 id='15-principleadomain1｜跨有限从句的局部性'><span>15. </span><code>principle_A_domain_1</code><span>｜跨有限从句的局部性</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：反身代词能否跨过从句边界，指向主句主语？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Carla had explained that Samuel has discussed her.</span></em><span>　负：</span><span>*</span><em><span>Carla had explained that Samuel has discussed herself.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：</span><em><span>herself</span></em><span>需要在嵌入从句的局部域内找到合适先行词，不能在这里越过 </span><em><span>Samuel</span></em><span> 指向 </span><em><span>Carla</span></em><span>；普通代词 </span><em><span>her</span></em><span>可以有较远指称。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：实际约束域的定义受理论分析和结构类型影响；本题只实现一种有限从句对立。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 98.4%；人工抽样一致率95.0%。</span></p></li></ul><h3 id='16-principleadomain2｜局部先行词的数匹配'><span>16. </span><code>principle_A_domain_2</code><span>｜局部先行词的数匹配</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：嵌入从句中的反身代词应与哪个局部主语在数上匹配？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Donald can imagine those college campuses are boring themselves.</span></em><span>　负：</span><span>*</span><em><span>Donald can imagine those college campuses are boring himself.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：局部复数主语 </span><em><span>college campuses</span></em><span>要求复数 </span><em><span>themselves</span></em><span>，不能选择与较远单数主语 </span><em><span>Donald</span></em><span>匹配的 </span><em><span>himself</span></em><span>。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：句子词义较生硬，诊断依赖形式特征和局部结构，不应按常识合理性作答。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 77.5%；人工抽样一致率75.0%。</span></p></li></ul><h3 id='17-principleadomain3｜局部先行词与词序'><span>17. </span><code>principle_A_domain_3</code><span>｜局部先行词与词序</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：交换主句和从句中的人名后，反身代词还能否找到局部匹配的先行词？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Steven explains Kayla won&#39;t hurt herself.</span></em><span>　负：</span><span>*</span><em><span>Kayla explains Steven won&#39;t hurt herself.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：正例中局部主语 </span><em><span>Kayla</span></em><span>可约束 </span><em><span>herself</span></em><span>；负例局部主语变成 </span><em><span>Steven</span></em><span>，而较远的 </span><em><span>Kayla</span></em><span>不能跨域约束。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：模板利用传统性别一致帮助锁定候选先行词，继承了二元性别词表的限制。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 75.4%；人工抽样一致率82.9%。</span></p></li></ul><h3 id='18-principleareconstruction｜移位后的重构'><span>18. </span><code>principle_A_reconstruction</code><span>｜移位后的重构</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：句首反身代词能否在解释时回到句内原位置，从而获得先行词？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>It&#39;s himself that this cashier attacked.</span></em><span>　负：</span><span>*</span><em><span>It&#39;s himself that attacked this cashier.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：正例可把前置的 </span><em><span>himself</span></em><span>解释为 </span><em><span>attacked __</span></em><span> 的宾语，并在重构位置受主语约束；负例对应主语空位，缺少同样的局部约束关系。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：分裂句的自然度和语境会影响判断；该模板只提供一种重构诊断。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 46.8%；人工抽样一致率78.0%。</span></p></li></ul><h2 id='四控制与提升5项'><span>四、控制与提升（5项）</span></h2><p><span>这组利用无具体所指的 </span><em><span>there/it</span></em><span> 和不定式结构，区分提升谓词与控制谓词；后两项比较tough结构和提升结构。</span></p><h3 id='19-existentialthereobjectraising｜宾语提升与存在式there'><span>19. </span><code>existential_there_object_raising</code><span>｜宾语提升与存在式there</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：动词后能否出现形式成分 </span><em><span>there</span></em><span>，再接 </span><em><span>to be…</span></em><span>？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>William has declared there to be no guests getting fired.</span></em><span>　负：</span><span>*</span><em><span>William has obliged there to be no guests getting fired.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：模板把允许“宾语提升/ECM”结构的谓词与要求有指称、有语义角色宾语的控制谓词对比；形式 </span><em><span>there</span></em><span>不能承担“被迫者”角色。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：不同动词的补语选择也参与判断，不能把所有差异归结为 </span><em><span>there</span></em><span> 本身。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 78.4%；人工抽样一致率89.8%。</span></p></li></ul><h3 id='20-existentialtheresubjectraising｜主语提升与存在式there'><span>20. </span><code>existential_there_subject_raising</code><span>｜主语提升与存在式there</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：</span><em><span>there</span></em><span>能否占据主句主语位置，而真正的名词短语留在后面？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>There is soon to be a cat existing.</span></em><span>　负：</span><span>*</span><em><span>There is willing to be a cat existing.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：提升类表达不要求表面主语获得语义角色，形式 </span><em><span>there</span></em><span>可以出现；控制形容词 </span><em><span>willing</span></em><span>要求有意志的主体，不能选择形式主语。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：正例本身不够自然，较适合当结构诊断，不宜当作推荐写法。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 91.1%；人工抽样一致率88.0%。</span></p></li></ul><h3 id='21-expletiveitobjectraising｜宾语提升与形式it'><span>21. </span><code>expletive_it_object_raising</code><span>｜宾语提升与形式it</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：动词后能否用无具体所指的 </span><em><span>it</span></em><span> 引出 </span><em><span>to be…that…</span></em><span>？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Tara would ascertain it to be noteworthy that Kenneth didn&#39;t wash.</span></em><span>　负：</span><span>*</span><em><span>Tara wouldn&#39;t entice it to be noteworthy that Kenneth didn&#39;t wash.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：提升/ECM类谓词可容纳形式 </span><em><span>it</span></em><span>；控制谓词 </span><em><span>entice</span></em><span>要求一个真正能被劝诱的宾语。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：正负例还更换了谓词和极性，严格说并非只操纵一个表面词形，可能引入词频和搭配差异。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 79.2%；人工抽样一致率85.7%。</span></p></li></ul><h3 id='22-toughvsraising1｜tough结构中的宾语空位'><span>22. </span><code>tough_vs_raising_1</code><span>｜tough结构中的宾语空位</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：主句主语能否对应不定式中介词后的未读宾语？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>James is pleasant to flee from.</span></em><span>　负：</span><span>*</span><em><span>James is apt to flee from.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：</span><em><span>pleasant</span></em><span>可进入tough类结构，使 </span><em><span>James</span></em><span>与 </span><em><span>from __</span></em><span> 的空位相关；提升形容词 </span><em><span>apt</span></em><span>要求 </span><em><span>James</span></em><span>是 </span><em><span>flee</span></em><span> 的主语，不能同时解释为 </span><em><span>from</span></em><span> 的宾语。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：词汇选择会影响自然度；模板测的是两类形容词与空位结构的兼容性。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 72.0%；人工抽样一致率75.0%。</span></p></li></ul><h3 id='23-toughvsraising2｜tough结构与显式宾语冲突'><span>23. </span><code>tough_vs_raising_2</code><span>｜tough结构与显式宾语冲突</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：tough类形容词所要求的空位若已被别的名词占据，句子是否仍成立？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Every hospital isn&#39;t about to tempt Tiffany to reference Matt.</span></em><span>　负：</span><span>*</span><em><span>Every hospital isn&#39;t fun to tempt Tiffany to reference Matt.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：</span><em><span>about to</span></em><span>是提升式表达，不要求主语与后层宾语空位对应；</span><em><span>fun to…</span></em><span>的tough分析需要主语与不定式中的空位关联，但句内相关位置已由 </span><em><span>Tiffany/Matt</span></em><span>占据。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：量词、否定和语义常识使样例较难；应把它看作结构对立，不要只凭句意自然度判断。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 88.9%；人工抽样一致率81.0%。</span></p></li></ul><h2 id='五限定词---名词一致8项'><span>五、限定词—名词一致（8项）</span></h2><p><span>8项把“限定词的数”“名词的数”“名词是否不规则复数”“中间是否有形容词”组合起来，检查模型是否追踪名词短语内部的一致关系。</span></p><h3 id='24-determinernounagreement1｜改变规则名词的数'><span>24. </span><code>determiner_noun_agreement_1</code><span>｜改变规则名词的数</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：单数限定词 </span><em><span>this</span></em><span> 后应接单数还是复数名词？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Raymond is selling this sketch.</span></em><span>　负：</span><span>*</span><em><span>Raymond is selling this sketches.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：</span><em><span>this</span></em><span>与单数 </span><em><span>sketch</span></em><span>一致。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：只测指示限定词的数一致，不测冠词和可数性。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 98.8%；人工抽样一致率95.8%。</span></p></li></ul><h3 id='25-determinernounagreement2｜改变规则限定词的数'><span>25. </span><code>determiner_noun_agreement_2</code><span>｜改变规则限定词的数</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：单数名词 </span><em><span>committee</span></em><span> 前应使用 </span><em><span>this</span></em><span> 还是 </span><em><span>these</span></em><span>？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Some dog stunned this committee.</span></em><span>　负：</span><span>*</span><em><span>Some dog stunned these committee.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：单数中心名词要求单数限定词 </span><em><span>this</span></em><span>。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：正负例只反映形式数，不涉及“委员会”在英美英语中的集合一致差异。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 97.7%；人工抽样一致率94.9%。</span></p></li></ul><h3 id='26-determinernounagreementirregular1｜不规则名词改变名词形式'><span>26. </span><code>determiner_noun_agreement_irregular_1</code><span>｜不规则名词：改变名词形式</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：复数限定词 </span><em><span>those</span></em><span> 后应使用 </span><em><span>cacti</span></em><span> 还是 </span><em><span>cactus</span></em><span>？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Laurie hasn&#39;t lifted those cacti.</span></em><span>　负：</span><span>*</span><em><span>Laurie hasn&#39;t lifted those cactus.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：</span><em><span>those</span></em><span>要求复数；模板词表把 </span><em><span>cacti</span></em><span>作为 </span><em><span>cactus</span></em><span>的复数。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：现实词汇可能有多个合法复数，如 </span><em><span>cactuses</span></em><span>；模板只覆盖词库列出的形式。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 95.7%；人工抽样一致率92.0%。</span></p></li></ul><h3 id='27-determinernounagreementirregular2｜不规则名词改变限定词形式'><span>27. </span><code>determiner_noun_agreement_irregular_2</code><span>｜不规则名词：改变限定词形式</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：单数 </span><em><span>child</span></em><span> 前应使用 </span><em><span>that</span></em><span> 还是 </span><em><span>those</span></em><span>？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>All boys boast about that child.</span></em><span>　负：</span><span>*</span><em><span>All boys boast about those child.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：单数名词与单数限定词 </span><em><span>that</span></em><span>一致。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：不规则性体现在 </span><em><span>child/children</span></em><span> 词项系统中，本组样例的负例直接操纵限定词。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 95.3%；人工抽样一致率85.0%。</span></p></li></ul><h3 id='28-determinernounagreementwithadjective1｜形容词介入改变规则名词'><span>28. </span><code>determiner_noun_agreement_with_adjective_1</code><span>｜形容词介入：改变规则名词</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：限定词和名词之间有形容词时，数一致是否仍要维持？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Rebecca was criticizing those good documentaries.</span></em><span>　负：</span><span>*</span><em><span>Rebecca was criticizing those good documentary.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：复数 </span><em><span>those</span></em><span>要求复数中心名词 </span><em><span>documentaries</span></em><span>；</span><em><span>good</span></em><span>不改变一致关系。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：形容词在英语中本身通常不显现数，因此真正比较的仍是限定词和中心名词。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 97.5%；人工抽样一致率95.0%。</span></p></li></ul><h3 id='29-determinernounagreementwithadj2｜形容词介入改变限定词'><span>29. </span><code>determiner_noun_agreement_with_adj_2</code><span>｜形容词介入：改变限定词</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：形容词隔开两端后，模型还能根据复数名词选择 </span><em><span>these</span></em><span> 吗？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Cynthia scans these hard books.</span></em><span>　负：</span><span>*</span><em><span>Cynthia scans this hard books.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：复数 </span><em><span>books</span></em><span>要求复数限定词 </span><em><span>these</span></em><span>。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：这是很短的局部依存；高分不代表模型能处理任意长度的一致关系。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 94.9%；人工抽样一致率96.0%。</span></p></li></ul><h3 id='30-determinernounagreementwithadjirregular1｜形容词介入的不规则名词形式'><span>30. </span><code>determiner_noun_agreement_with_adj_irregular_1</code><span>｜形容词介入的不规则名词形式</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：</span><em><span>this lost…</span></em><span> 后应接单数 </span><em><span>foot</span></em><span> 还是复数 </span><em><span>feet</span></em><span>？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Some waiters broke this lost foot.</span></em><span>　负：</span><span>*</span><em><span>Some waiters broke this lost feet.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：单数 </span><em><span>this</span></em><span>要求单数不规则名词 </span><em><span>foot</span></em><span>。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：模板同时要求模型识别不规则词形和跨过形容词的一致关系。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 92.7%；人工抽样一致率93.8%。</span></p></li></ul><h3 id='31-determinernounagreementwithadjirregular2｜形容词介入的不规则限定词形式'><span>31. </span><code>determiner_noun_agreement_with_adj_irregular_2</code><span>｜形容词介入的不规则限定词形式</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：单数不规则名词前，即使有形容词隔开，能否使用复数限定词？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Alexander didn&#39;t walk through that new oasis.</span></em><span>　负：</span><span>*</span><em><span>Alexander didn&#39;t walk through those new oasis.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：单数 </span><em><span>oasis</span></em><span>要求单数 </span><em><span>that</span></em><span>。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：</span><em><span>oasis</span></em><span>的复数形式 </span><em><span>oases</span></em><span>并未在这组负例中出现；题目直接考查限定词选择。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 94.0%；人工抽样一致率85.0%。</span></p></li></ul><h2 id='六省略2项'><span>六、省略（2项）</span></h2><p><span>BLiMP只覆盖N-bar省略：后一并列分句保留数量词等成分，名词性中心部分不发音，但要从前文恢复。</span></p><h3 id='32-ellipsisnbar1｜形容词包含在省略先行项中'><span>32. </span><code>ellipsis_n_bar_1</code><span>｜形容词包含在省略先行项中</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：后半句只说 </span><em><span>many</span></em><span> 时，能否从前文恢复“many rough grocery stores”？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Dawn&#39;s ex-husband wasn&#39;t going to one rough grocery store and Becca wasn&#39;t going to many.</span></em><span>　负：</span><span>*</span><em><span>Dawn&#39;s ex-husband wasn&#39;t going to one grocery store and Becca wasn&#39;t going to many rough.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：正例的省略内容可由前文 </span><em><span>rough grocery store</span></em><span>提供；负例把 </span><em><span>rough</span></em><span>只留在省略后的残余位置，前文没有与之平行的含形容词先行结构。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：自然语境可能改善某些残余形容词读法；模板实现的是特定平行性假设。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 91.5%；人工抽样一致率92.0%。</span></p></li></ul><h3 id='33-ellipsisnbar2｜前后形容词对照与省略'><span>33. </span><code>ellipsis_n_bar_2</code><span>｜前后形容词对照与省略</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：后一名词短语保留新形容词时，中心名词能否省略？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>A friend of Pamela hasn&#39;t attacked one person and Ann hasn&#39;t attacked more unsure person.</span></em><span>　负：</span><span>*</span><em><span>A friend of Pamela hasn&#39;t attacked one unemployed person and Ann hasn&#39;t attacked more unsure.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：模板把完整的 </span><em><span>unsure person</span></em><span>与形容词残余 </span><em><span>unsure</span></em><span>对比，后者缺少可按设定恢复的合适名词性结构。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：官方首条正例本身较生硬，人工抽样一致率也只有78%；本项应视为数据质量较弱的诊断，而非无争议规则。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 87.2%；人工抽样一致率78.0%。</span></p></li></ul><h2 id='七填充语---空位依存7项'><span>七、填充语—空位依存（7项）</span></h2><p><span>这组检查 </span><em><span>wh</span></em><span> 成分与句内空位是否同时出现。</span><code>with_gap</code><span>表示句内存在未读论元位置，</span><code>no_gap</code><span>表示相应论元位置已被明说成分占据；</span><code>long_distance</code><span>表示依存跨越更深的从句结构。</span></p><h3 id='34-whquestionsobjectgap｜宾语位置的填充语---空位配对'><span>34. </span><code>wh_questions_object_gap</code><span>｜宾语位置的填充语—空位配对</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：关系/疑问成分出现后，动词宾语位置还应不应该再出现一个完整名词短语？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Joel discovered the vase that Patricia might take.</span></em><span>　负：</span><span>*</span><em><span>Joel discovered what Patricia might take the vase.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：正例中 </span><em><span>that</span></em><span>对应 </span><em><span>take __</span></em><span> 的宾语空位；负例已有 </span><em><span>what</span></em><span>作填充语，却又把 </span><em><span>the vase</span></em><span>填回宾语位置，因而没有可对应的空位。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：样例混合关系从句和嵌入问句表面形式，重点是填充语与宾语空位是否成对出现。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 84.2%；人工抽样一致率85.0%。</span></p></li></ul><h3 id='35-whquestionssubjectgap｜局部主语空位'><span>35. </span><code>wh_questions_subject_gap</code><span>｜局部主语空位</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：关系成分对应从句主语空位时，能否再明说另一个主语？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Brian had questioned an association that can astound Diana.</span></em><span>　负：</span><span>*</span><em><span>Brian had questioned who an association can astound Diana.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：正例中关系词 </span><em><span>that</span></em><span>对应 </span><em><span>can astound Diana</span></em><span> 的主语空位；负例加入 </span><em><span>who</span></em><span>后，从句已有明说主语 </span><em><span>an association</span></em><span>，没有相应空位。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：句子类型的词义搭配不自然，诊断应聚焦从句主语位置是否空缺。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 95.6%；人工抽样一致率98.0%。</span></p></li></ul><h3 id='36-whquestionssubjectgaplongdistance｜长距离主语空位'><span>36. </span><code>wh_questions_subject_gap_long_distance</code><span>｜长距离主语空位</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：当前置成分跨过更复杂结构时，后方是否仍必须保留与它对应的主语空位？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Dennis has seen this tooth that Kristin wasn&#39;t concealing that is astounding men.</span></em><span>　负：</span><span>*</span><em><span>Dennis has seen who this tooth that Kristin wasn&#39;t concealing is astounding men.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：正例的关系结构为前置成分保留了主语空位；负例中的 </span><em><span>who</span></em><span>与后面已经出现的主语成分冲突，缺少可对应空位。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：多层关系从句增加了加工负担；错误可能来自依存追踪，也可能来自句子复杂度。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 87.1%；人工抽样一致率84.9%。</span></p></li></ul><h3 id='37-whvsthatnogap｜无空位时选择that'><span>37. </span><code>wh_vs_that_no_gap</code><span>｜无空位时选择that</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：嵌入从句中主语、宾语都已出现时，应使用陈述补语标记 </span><em><span>that</span></em><span> 还是疑问词 </span><em><span>who</span></em><span>？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Mark figured out that most governments appreciate Steve.</span></em><span>　负：</span><span>*</span><em><span>Mark figured out who most governments appreciate Steve.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：正例是成分完整的陈述补语；负例加入 </span><em><span>who</span></em><span>，但 </span><em><span>appreciate</span></em><span>的宾语已由 </span><em><span>Steve</span></em><span>占据，没有空位供 </span><em><span>who</span></em><span>解释。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：该题不是一般比较 </span><em><span>who</span></em><span>和 </span><em><span>that</span></em><span>，而是比较它们与“有无空位”的组合。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 96.8%；人工抽样一致率97.0%。</span></p></li></ul><h3 id='38-whvsthatnogaplongdistance｜长结构中无空位时选择that'><span>38. </span><code>wh_vs_that_no_gap_long_distance</code><span>｜长结构中无空位时选择that</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：从句更长时，模型能否确认所有论元位置都已填满，从而拒绝多余的 </span><em><span>who</span></em><span>？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Every association figured out that most drivers that forfeit investigated Irene.</span></em><span>　负：</span><span>*</span><em><span>Every association figured out who most drivers that forfeit investigated Irene.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：</span><em><span>investigated</span></em><span>已有主语 </span><em><span>drivers</span></em><span>和宾语 </span><em><span>Irene</span></em><span>；</span><em><span>who</span></em><span>没有空位可以对应，</span><em><span>that</span></em><span>才与完整陈述补语相容。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：关系从句 </span><em><span>that forfeit</span></em><span>是距离干扰项，不是目标依存的一部分。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 93.8%；人工抽样一致率91.9%。</span></p></li></ul><h3 id='39-whvsthatwithgap｜有空位时选择wh成分'><span>39. </span><code>wh_vs_that_with_gap</code><span>｜有空位时选择wh成分</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：嵌入动词缺少宾语时，应使用能与空位对应的 </span><em><span>who</span></em><span>，还是普通补语标记 </span><em><span>that</span></em><span>？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>A lady has remembered who the actors conceal.</span></em><span>　负：</span><span>*</span><em><span>A lady has remembered that the actors conceal.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：正例中 </span><em><span>who</span></em><span>对应 </span><em><span>conceal __</span></em><span> 的宾语空位；</span><em><span>that</span></em><span>本身不提供被隐瞒对象，负例留下未获许可的缺项。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：部分动词在特定语境下允许宾语省略；模板选择的词义按需要宾语处理。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 55.1%；人工抽样一致率77.0%。</span></p></li></ul><h3 id='40-whvsthatwithgaplongdistance｜长结构中有空位时选择wh成分'><span>40. </span><code>wh_vs_that_with_gap_long_distance</code><span>｜长结构中有空位时选择wh成分</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：空位与填充语相隔更远时，模型能否持续追踪二者关系？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Kayla concealed who a lot of guests that were scaring many people complain about.</span></em><span>　负：</span><span>*</span><em><span>Kayla concealed that a lot of guests that were scaring many people complain about.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：</span><em><span>who</span></em><span>对应句尾介词 </span><em><span>about __</span></em><span>的宾语空位；</span><em><span>that</span></em><span>不能为这个缺失宾语提供内容。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：长距离和介词滞留同时出现，低分不能唯一归因于某一个因素。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 56.3%；人工抽样一致率74.7%。</span></p></li></ul><h2 id='八不规则形式2项'><span>八、不规则形式（2项）</span></h2><p><span>这组要求模型区分不规则动词的过去式和过去分词；一项把分词放在名词前作定语，另一项放在谓语位置。</span></p><h3 id='41-irregularpastparticipleadjectives｜不规则过去分词作定语'><span>41. </span><code>irregular_past_participle_adjectives</code><span>｜不规则过去分词作定语</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：名词前表达“被隐藏的”时，应使用 </span><em><span>hidden</span></em><span> 还是过去式 </span><em><span>hid</span></em><span>？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>The hidden offspring aren&#39;t confident.</span></em><span>　负：</span><span>*</span><em><span>The hid offspring aren&#39;t confident.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：定语位置需要过去分词 </span><em><span>hidden</span></em><span>；</span><em><span>hid</span></em><span>是过去式，不能直接承担该功能。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：测试词表中的特定不规则形式，不等于开放词汇上的形态生成能力。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 97.7%；人工抽样一致率99.0%。</span></p></li></ul><h3 id='42-irregularpastparticipleverbs｜谓语中的过去式分词选择'><span>42. </span><code>irregular_past_participle_verbs</code><span>｜谓语中的过去式/分词选择</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：没有助动词时，过去时谓语应使用 </span><em><span>wore</span></em><span> 还是分词 </span><em><span>worn</span></em><span>？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>The Borgias wore a lot of scarves.</span></em><span>　负：</span><span>*</span><em><span>The Borgias worn a lot of scarves.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：简单过去时需要限定形式 </span><em><span>wore</span></em><span>；</span><em><span>worn</span></em><span>通常需要与 </span><em><span>have/be</span></em><span>等助动词结合。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：模板主要检验词形和局部助动词环境，容易受到高频搭配线索帮助。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 86.1%；人工抽样一致率95.0%。</span></p></li></ul><h2 id='九岛效应8项'><span>九、岛效应（8项）</span></h2><p><span>岛效应限制填充语从某些结构内部与空位建立依存。每项通常让正例把空位放在允许抽取的位置，让负例把空位移入受限制区域，或违反并列结构的平行抽取条件。</span></p><h3 id='43-adjunctisland｜附加语岛'><span>43. </span><code>adjunct_island</code><span>｜附加语岛</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：疑问词能否从 </span><em><span>after…</span></em><span> 附加语从句内部抽出？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Who should Derek hug after shocking Richard?</span></em><span>　负：</span><span>*</span><em><span>Who should Derek hug Richard after shocking?</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：正例的 </span><em><span>who</span></em><span>对应主句 </span><em><span>hug __</span></em><span> 的宾语；负例试图对应附加语 </span><em><span>after shocking __</span></em><span> 中的空位，跨越附加语岛。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：两句的论元位置同时调整；分数也可能受动词后是否已有宾语影响。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 89.4%；人工抽样一致率94.0%。</span></p></li></ul><h3 id='44-complexnpisland｜复杂名词短语岛'><span>44. </span><code>complex_NP_island</code><span>｜复杂名词短语岛</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：疑问词能否从含关系从句的复杂名词短语内部抽出？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Who aren&#39;t most hospitals that hadn&#39;t talked about most waitresses alarming?</span></em><span>　负：</span><span>*</span><em><span>Who aren&#39;t most waitresses alarming most hospitals that hadn&#39;t talked about?</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：正例让 </span><em><span>who</span></em><span>对应主句 </span><em><span>alarming __</span></em><span> 的空位；负例把空位放进修饰 </span><em><span>hospitals</span></em><span> 的关系从句 </span><em><span>talked about __</span></em><span>，形成复杂名词短语岛违规。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：官方首条句子极其生硬，人工一致率仅80.4%；读者应按结构位置而非句意自然度理解。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 72.2%；人工抽样一致率80.4%。</span></p></li></ul><h3 id='45-coordinatestructureconstraintcomplexleftbranch｜并列结构中的跨项与左分支限制'><span>45. </span><code>coordinate_structure_constraint_complex_left_branch</code><span>｜并列结构中的跨项与左分支限制</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：前置成分能否同时对应两个并列分句中的空位，而只抽出限定成分、把名词留在原位是否可行？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>What senators was Alicia approaching and some teachers scaring?</span></em><span>　负：</span><span>*</span><em><span>What was Alicia approaching senators and some teachers scaring?</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：正例按模板让完整 </span><em><span>what senators</span></em><span>与并列项中的相应位置形成平行依存；负例只前置 </span><em><span>what</span></em><span>、留下 </span><em><span>senators</span></em><span>，破坏左分支和并列结构条件。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：该模板叠加两种限制，不能用分数分别估计“左分支”与“并列约束”的贡献。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 81.0%；人工抽样一致率90.0%。</span></p></li></ul><h3 id='46-coordinatestructureconstraintobjectextraction｜并列结构的跨项抽取'><span>46. </span><code>coordinate_structure_constraint_object_extraction</code><span>｜并列结构的跨项抽取</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：从并列结构抽取宾语时，是否必须在两个并列项中都留下对应空位？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Who were all men and Eric leaving?</span></em><span>　负：</span><span>*</span><em><span>Who were all men leaving and Eric?</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：正例按跨项抽取分析，让 </span><em><span>who</span></em><span>与并列谓语中的平行空位对应；负例只从一个并列项抽取，另一项保留 </span><em><span>Eric</span></em><span>，违反并列结构约束。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：生成句的时态和协调结构不够自然，可能放大加工难度。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 85.4%；人工抽样一致率90.9%。</span></p></li></ul><h3 id='47-leftbranchislandechoquestion｜回声问句中的左分支抽取'><span>47. </span><code>left_branch_island_echo_question</code><span>｜回声问句中的左分支抽取</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：询问“谁的地毯”时，能否只把 </span><em><span>whose</span></em><span>移到句首而把 </span><em><span>rug</span></em><span>留在原位？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Irene had messed up whose rug?</span></em><span>　负：</span><span>*</span><em><span>Whose had Irene messed up rug?</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：英语通常不允许只从名词短语中抽出所有者成分 </span><em><span>whose</span></em><span>；回声问句可把完整 </span><em><span>whose rug</span></em><span>留在原位。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：正例是回声问句，不是普通信息问句；语境和语调对其自然度很重要。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 52.3%；人工抽样一致率91.0%。</span></p></li></ul><h3 id='48-leftbranchislandsimplequestion｜普通问句中的左分支抽取'><span>48. </span><code>left_branch_island_simple_question</code><span>｜普通问句中的左分支抽取</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：普通疑问句应前置完整的 </span><em><span>whose museums</span></em><span>，还是只前置 </span><em><span>whose</span></em><span>？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Whose museums had Dana alarmed?</span></em><span>　负：</span><span>*</span><em><span>Whose had Dana alarmed museums?</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：完整名词短语可以前置；只抽出其左侧限定成分、把中心名词留在原位通常不可接受。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：该限制具有明显跨语言差异，不能从英语结果推断其他语言的所有者疑问结构。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 87.1%；人工抽样一致率99.0%。</span></p></li></ul><h3 id='49-sententialsubjectisland｜句子主语岛'><span>49. </span><code>sentential_subject_island</code><span>｜句子主语岛</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：能否从充当主语的动名词结构内部抽出宾语？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Who had the patients&#39; cleaning those banks upset.</span></em><span>　负：</span><span>*</span><em><span>Who had the patients&#39; cleaning upset those banks.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：正例让 </span><em><span>who</span></em><span>对应主句 </span><em><span>upset __</span></em><span> 的宾语；负例试图从主语成分 </span><em><span>the patients&#39; cleaning __</span></em><span> 内部抽取，而主句宾语由 </span><em><span>those banks</span></em><span>占据。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：人工抽样一致率仅60.6%，是BLiMP中质量警报最明显的模板之一；标签不宜当作稳固的人类共识。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 35.5%；人工抽样一致率60.6%。</span></p></li></ul><h3 id='50-whisland｜wh从句岛'><span>50. </span><code>wh_island</code><span>｜wh从句岛</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：一个疑问成分能否跨过另一个 </span><em><span>wh</span></em><span> 从句边界与内部空位相连？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Who have those men revealed they helped?</span></em><span>　负：</span><span>*</span><em><span>Who have those men revealed who helped?</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：正例跨过普通陈述补语建立宾语依存；负例让依存进入由另一个 </span><em><span>who</span></em><span>引导的从句，触发 </span><em><span>wh</span></em><span> 岛限制。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：负例的角色分配和空位位置较难解析，低分可能同时反映歧义与加工负担。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 78.9%；人工抽样一致率73.0%。</span></p></li></ul><h2 id='十否定极性项许可7项'><span>十、否定极性项许可（7项）</span></h2><p><span>这组以 </span><em><span>ever</span></em><span> 为主要否定极性项。题目既检查句中有没有许可成分，也检查许可成分是否在结构和意义上覆盖 </span><em><span>ever</span></em><span>。</span></p><h3 id='51-matrixquestionnpilicensorpresent｜矩阵一般疑问句许可ever'><span>51. </span><code>matrix_question_npi_licensor_present</code><span>｜矩阵一般疑问句许可ever</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：句子采用一般疑问句语序时，</span><em><span>ever</span></em><span>是否比在普通肯定陈述句中自然？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Had Bruce ever played?</span></em><span>　负：</span><span>*</span><em><span>Bruce had ever played.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：矩阵疑问环境可许可 </span><em><span>ever</span></em><span>；无否定、无疑问的肯定陈述句通常不能。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：负例在特殊语境中可能出现；模板默认无额外语境的普通读法。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 65.4%；人工抽样一致率98.0%。</span></p></li></ul><h3 id='52-npipresent1｜无许可环境中的ever副词对照一'><span>52. </span><code>npi_present_1</code><span>｜无许可环境中的ever：副词对照一</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：没有否定或疑问时，普通副词 </span><em><span>really</span></em><span>与NPI </span><em><span>ever</span></em><span>哪一个可出现？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Even Suzanne has really joked around.</span></em><span>　负：</span><span>*</span><em><span>Even Suzanne has ever joked around.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：</span><em><span>even</span></em><span>在该结构中不按模板许可 </span><em><span>ever</span></em><span>，普通程度副词 </span><em><span>really</span></em><span>不受此限制。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：句中的 </span><em><span>even</span></em><span>可能让读者误以为它与 </span><em><span>ever</span></em><span>总能组合；本题正是检验具体许可条件。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 64.8%；人工抽样一致率83.0%。</span></p></li></ul><h3 id='53-npipresent2｜无许可环境中的ever副词对照二'><span>53. </span><code>npi_present_2</code><span>｜无许可环境中的ever：副词对照二</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：普通肯定句中，</span><em><span>ever</span></em><span>能否替代普通副词？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Tamara really exited those mountains.</span></em><span>　负：</span><span>*</span><em><span>Tamara ever exited those mountains.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：负例缺少否定、疑问或其他合适许可成分。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：正例的动词搭配生硬，但目标对立是 </span><em><span>really/ever</span></em><span> 的分布，不是地点表达是否自然。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 64.3%；人工抽样一致率98.0%。</span></p></li></ul><h3 id='54-onlynpilicensorpresent｜only对ever的许可'><span>54. </span><code>only_npi_licensor_present</code><span>｜only对ever的许可</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：</span><em><span>only</span></em><span>和 </span><em><span>even</span></em><span>都放在主语前时，哪一个能许可后面的 </span><em><span>ever</span></em><span>？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Only Bill would ever complain.</span></em><span>　负：</span><span>*</span><em><span>Even Bill would ever complain.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：排他成分 </span><em><span>only</span></em><span>在该结构中提供适当的语义环境；</span><em><span>even</span></em><span>不提供同样许可。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：NPI许可不是看到某个关键词即可；位置、作用域和句子意义共同参与。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 94.5%；人工抽样一致率92.0%。</span></p></li></ul><h3 id='55-onlynpiscope｜only与ever的作用域'><span>55. </span><code>only_npi_scope</code><span>｜only与ever的作用域</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：句中虽然有 </span><em><span>only</span></em><span>，它是否位于能够覆盖 </span><em><span>ever</span></em><span>的位置？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Only the grandsons of the Impressionists who Colleen is appreciating ever encourage Phillip to stretch.</span></em><span>　负：</span><span>*</span><em><span>The grandsons of the Impressionists who only Colleen is appreciating ever encourage Phillip to stretch.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：正例的 </span><em><span>only</span></em><span>修饰整个主语并对后面的 </span><em><span>ever</span></em><span>取得许可作用域；负例的 </span><em><span>only</span></em><span>嵌在主语内部关系从句中，不能向外许可主句 </span><em><span>ever</span></em><span>。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：句子很长，模型可能依赖 </span><em><span>only</span></em><span>与 </span><em><span>ever</span></em><span>的距离，而非真正计算结构作用域。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 78.5%；人工抽样一致率72.0%。</span></p></li></ul><h3 id='56-sententialnegationnpilicensorpresent｜句子否定许可ever'><span>56. </span><code>sentential_negation_npi_licensor_present</code><span>｜句子否定许可ever</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：</span><em><span>ever</span></em><span>前需要否定词 </span><em><span>not</span></em><span>，还是普通副词 </span><em><span>probably</span></em><span>也可以？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Teresa had not ever sold a movie theater.</span></em><span>　负：</span><span>*</span><em><span>Teresa had probably ever sold a movie theater.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：句子否定 </span><em><span>not</span></em><span>许可NPI </span><em><span>ever</span></em><span>；</span><em><span>probably</span></em><span>不具有同样性质。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：这是局部、词汇标记明显的对立，高分可能部分来自高频搭配 </span><em><span>not ever</span></em><span>。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 97.1%；人工抽样一致率92.8%。</span></p></li></ul><h3 id='57-sententialnegationnpiscope｜否定与ever的跨从句作用域'><span>57. </span><code>sentential_negation_npi_scope</code><span>｜否定与ever的跨从句作用域</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：句中出现 </span><em><span>not</span></em><span> 就够了吗，还是它必须在结构上覆盖 </span><em><span>ever</span></em><span>？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>The associations that had worried Cynthia have not ever planned to shock every actress.</span></em><span>　负：</span><span>*</span><em><span>The associations that had not worried Cynthia have ever planned to shock every actress.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：正例的主句否定覆盖主句 </span><em><span>ever</span></em><span>；负例的 </span><em><span>not</span></em><span>被关在主语关系从句中，不能向外许可主句NPI。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：词序距离与句法作用域在此同向变化，需要额外实验排除纯距离策略。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 73.2%；人工抽样一致率81.0%。</span></p></li></ul><h2 id='十一量词4项'><span>十一、量词（4项）</span></h2><p><span>前两项考查存在句中名词短语的量词限制；后两项考查 </span><em><span>no</span></em><span> 与带最高级意义的数量边界表达之间的兼容性。后者包含较强语义—语用判断。</span></p><h3 id='58-existentialtherequantifiers1｜存在句中的a与each'><span>58. </span><code>existential_there_quantifiers_1</code><span>｜存在句中的a与each</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：存在句 </span><em><span>there be</span></em><span> 后，普通不定名词短语与 </span><em><span>each</span></em><span>量词短语哪一个更自然？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>There was a documentary about music irritating Allison.</span></em><span>　负：</span><span>*</span><em><span>There was each documentary about music irritating Allison.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：英语存在句通常允许不定名词短语，而 </span><em><span>each</span></em><span>一类强量词受“确定性效应”限制。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：特殊列举或对比语境可能改变接受度；模板默认中性语境。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 99.5%；人工抽样一致率94.0%。</span></p></li></ul><h3 id='59-existentialtherequantifiers2｜存在句中的all'><span>59. </span><code>existential_there_quantifiers_2</code><span>｜存在句中的all</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：</span><em><span>all</span></em><span>量词短语能否直接放在存在式 </span><em><span>there</span></em><span> 后？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>All convertibles weren&#39;t there existing.</span></em><span>　负：</span><span>*</span><em><span>There weren&#39;t all convertibles existing.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：模板把 </span><em><span>all convertibles</span></em><span>置于普通量词主语位置设为正例，把它置于存在句后名词短语位置设为负例。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：正例非常不自然，人工一致率仅76.4%，GPT-2也低于随机水平；这一项不适合被当作干净的单因素量词测试。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 42.4%；人工抽样一致率76.4%。</span></p></li></ul><h3 id='60-superlativequantifiers1｜no与数量上界表达一'><span>60. </span><code>superlative_quantifiers_1</code><span>｜no与数量上界表达一</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：否定量词 </span><em><span>no</span></em><span> 后的谓语中，</span><em><span>fewer than two</span></em><span>与 </span><em><span>at most two</span></em><span>是否同样容易获得一致解释？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>No girl attacked fewer than two waiters.</span></em><span>　负：</span><span>*</span><em><span>No girl attacked at most two waiters.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：模板依据广义量词和单调性分析，把 </span><em><span>no + fewer than</span></em><span>设为可接受组合，把 </span><em><span>no + at most</span></em><span>设为不相容组合。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：这是语义可接受性而非形态句法错误；上下文、焦点和推理方式可能显著影响母语者判断。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 87.0%；人工抽样一致率91.0%。</span></p></li></ul><h3 id='61-superlativequantifiers2｜no与数量上界表达二'><span>61. </span><code>superlative_quantifiers_2</code><span>｜no与数量上界表达二</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：</span><em><span>at most nine</span></em><span>在普通肯定主语和 </span><em><span>no</span></em><span>主语下是否同样可解释？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>The teenager does tour at most nine restaurants.</span></em><span>　负：</span><span>*</span><em><span>No teenager does tour at most nine restaurants.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：模板把普通肯定主语与上界数量表达的组合设为正例，把 </span><em><span>no</span></em><span>与该表达的嵌套设为负例。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：正例含强调助动词 </span><em><span>does</span></em><span>，整体也较生硬；分数可能混合语义兼容性和表面搭配熟悉度。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 87.2%；人工抽样一致率85.0%。</span></p></li></ul><h2 id='十二主谓一致6项'><span>十二、主谓一致（6项）</span></h2><p><span>前两项在主语内部加入复数干扰名词，检查模型是否追踪真正的中心语；其余四项使用规则或不规则单复数，改变主语或动词的一端。</span></p><h3 id='62-distractoragreementrelationalnoun｜关系名词短语中的一致干扰'><span>62. </span><code>distractor_agreement_relational_noun</code><span>｜关系名词短语中的一致干扰</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：主语内部较近的复数名词会不会使模型误选复数动词？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>A niece of most senators hasn&#39;t descended most slopes.</span></em><span>　负：</span><span>*</span><em><span>A niece of most senators haven&#39;t descended most slopes.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：主语中心语是单数 </span><em><span>niece</span></em><span>；介词短语中的复数 </span><em><span>senators</span></em><span>只是干扰项，限定动词应使用 </span><em><span>hasn&#39;t</span></em><span>。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：这类题同时测层级结构和对一致吸引错误的抵抗力。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 79.5%；人工抽样一致率81.0%。</span></p></li></ul><h3 id='63-distractoragreementrelativeclause｜关系从句中的一致干扰'><span>63. </span><code>distractor_agreement_relative_clause</code><span>｜关系从句中的一致干扰</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：主语关系从句内的复数名词能否改变主句动词的数？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>This customer who had visited most children has worn some shoes.</span></em><span>　负：</span><span>*</span><em><span>This customer who had visited most children have worn some shoes.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：主句主语中心语是单数 </span><em><span>customer</span></em><span>；关系从句宾语 </span><em><span>children</span></em><span>不控制主句谓语。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：干扰项与动词线性距离较近，模型高分才更能支持其利用层级主语信息。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 65.7%；人工抽样一致率85.7%。</span></p></li></ul><h3 id='64-irregularpluralsubjectverbagreement1｜不规则复数主语改变动词'><span>64. </span><code>irregular_plural_subject_verb_agreement_1</code><span>｜不规则复数主语：改变动词</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：不以普通 </span><em><span>-s</span></em><span>结尾的复数 </span><em><span>radii</span></em><span>应搭配 </span><em><span>have</span></em><span>还是 </span><em><span>has</span></em><span>？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Those radii have scared that teenager.</span></em><span>　负：</span><span>*</span><em><span>Those radii has scared that teenager.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：</span><em><span>radii</span></em><span>是复数主语，要求复数助动词 </span><em><span>have</span></em><span>。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：限定词 </span><em><span>those</span></em><span>也显式提示复数，模型可能不必只靠识别 </span><em><span>radii</span></em><span>词形。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 92.8%；人工抽样一致率94.0%。</span></p></li></ul><h3 id='65-irregularpluralsubjectverbagreement2｜不规则单复数主语改变主语'><span>65. </span><code>irregular_plural_subject_verb_agreement_2</code><span>｜不规则单复数主语：改变主语</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：动词为复数形式 </span><em><span>meet</span></em><span>时，主语应是 </span><em><span>women</span></em><span>还是 </span><em><span>woman</span></em><span>？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>The women meet.</span></em><span>　负：</span><span>*</span><em><span>The woman meet.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：不规则复数 </span><em><span>women</span></em><span>与无第三人称单数 </span><em><span>-s</span></em><span>的 </span><em><span>meet</span></em><span>一致；单数 </span><em><span>woman</span></em><span>要求 </span><em><span>meets</span></em><span>。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：题目很短且词形高频，适合检测基本知识，不足以代表长距离一致能力。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 92.4%；人工抽样一致率95.0%。</span></p></li></ul><h3 id='66-regularpluralsubjectverbagreement1｜规则主语改变动词形式'><span>66. </span><code>regular_plural_subject_verb_agreement_1</code><span>｜规则主语：改变动词形式</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：单数主语 </span><em><span>Paula</span></em><span>应搭配 </span><em><span>references</span></em><span>还是 </span><em><span>reference</span></em><span>？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>Paula references Robert.</span></em><span>　负：</span><span>*</span><em><span>Paula reference Robert.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：第三人称单数现在时要求动词带 </span><em><span>-s</span></em><span>。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：官方UID虽含 </span><code>plural</code><span>，该方向的具体句对使用单数主语操纵动词；索引按数据内容说明，不按名称望文生义。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 96.7%；人工抽样一致率95.0%。</span></p></li></ul><h3 id='67-regularpluralsubjectverbagreement2｜规则主语改变主语形式'><span>67. </span><code>regular_plural_subject_verb_agreement_2</code><span>｜规则主语：改变主语形式</span></h3><ul><li><p><strong><span>通俗问题</span></strong><span>：动词为复数形式 </span><em><span>perform</span></em><span>时，主语应是 </span><em><span>students</span></em><span>还是 </span><em><span>student</span></em><span>？</span></p></li><li><p><strong><span>官方样例</span></strong><span>：正：</span><em><span>The students perform.</span></em><span>　负：</span><span>*</span><em><span>The student perform.</span></em></p></li><li><p><strong><span>判断依据</span></strong><span>：规则复数主语与无第三人称单数 </span><em><span>-s</span></em><span>的动词一致；单数主语应使用 </span><em><span>performs</span></em><span>。</span></p></li><li><p><strong><span>解读边界</span></strong><span>：这一项只含相邻的简单主谓关系，不测跨插入成分的一致追踪。</span></p></li><li><p><strong><span>原始参照</span></strong><span>：GPT-2 91.0%；人工抽样一致率95.0%。</span></p></li></ul><h2 id='总览怎样理解67项而不被术语淹没'><span>总览：怎样理解67项而不被术语淹没</span></h2><p><span>67项并不是67条彼此独立的“英语规则”。它们大体可以归结为四种实验操作：</span></p><ol start='' ><li><p><strong><span>形式匹配</span></strong><span>：改变数、性、时态或分词形式，如照应语一致、限定词—名词一致和主谓一致；</span></p></li><li><p><strong><span>结构许可</span></strong><span>：改变动词能否带宾语、被动或不定式结构，如论元结构和控制/提升；</span></p></li><li><p><strong><span>依存位置</span></strong><span>：移动填充语或空位，检查远距离关系和结构边界，如填充语—空位依存与岛效应；</span></p></li><li><p><strong><span>解释条件</span></strong><span>：改变许可成分或作用域，如否定极性项和量词。</span></p></li></ol><p><span>因此，读一个模板时最有效的问题不是“这个UID怎样翻译”，而是：正负例改变了哪一个可观察条件？这一条件预期影响哪个成分之间的关系？是否还有词频、语境、自然度或多重操纵可以解释模型分数？</span></p><h2 id='数据质量与使用提醒'><span>数据质量与使用提醒</span></h2><ul><li><p><span>人工抽样一致率较低的模板应单独报告，尤其是 </span><code>sentential_subject_island</code><span>（60.6%）、</span><code>only_npi_scope</code><span>（72.0%）、</span><code>wh_island</code><span>（73.0%）、</span><code>wh_vs_that_with_gap_long_distance</code><span>（74.7%）、</span><code>principle_A_domain_2</code><span>与</span><code>tough_vs_raising_1</code><span>（均75.0%）。</span></p></li><li><p><code>complex_NP_island</code><span>、</span><code>existential_there_quantifiers_2</code><span>、</span><code>ellipsis_n_bar_2</code><span>等模板的生成句明显生硬。模型答错可能反映目标现象，也可能反映词汇搭配、加工难度或模板伪影。</span></p></li><li><p><span>生命度、传统语法性别和主谓一致标签采用BLiMP的主流美国英语设定。研究者若用于方言、公平性或社会语言学分析，应重新验证词表和标签。</span></p></li><li><p><span>若要评价当代头部模型，最好使用未公开的新词表和新模板，并在同一界面下同步采集人类判断；不宜把公开数据上的接近满分直接解释为相应语言能力已经完全解决。</span></p></li></ul><p>&nbsp;</p><p>&nbsp;</p><h2 id='资料来源'><span>资料来源</span></h2><ol start='' ><li><p><span>Warstadt et al. 2020. </span><em><span>BLiMP: The Benchmark of Linguistic Minimal Pairs for English</span></em><span>.</span><br/><a href='https://aclanthology.org/2020.tacl-1.25/' target='_blank' class='url'>https://aclanthology.org/2020.tacl-1.25/</a></p></li><li><p><span>BLiMP官方数据文件、GPT-2结果和人工验证摘要。</span><br/><a href='https://github.com/alexwarstadt/blimp' target='_blank' class='url'>https://github.com/alexwarstadt/blimp</a></p></li><li><p><span>BLiMP官方范式补充材料。</span><br/><a href='https://github.com/alexwarstadt/blimp/blob/master/supplemental_materials/BLiMP_Paradigms.pdf' target='_blank' class='url'>https://github.com/alexwarstadt/blimp/blob/master/supplemental_materials/BLiMP_Paradigms.pdf</a></p></li></ol><p>&nbsp;</p></div></div>
+</body>
+</html>

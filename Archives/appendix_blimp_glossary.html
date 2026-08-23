@@ -1,0 +1,622 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'><style type='text/css'>html {overflow-x: initial !important;}</style>
+<style type='text/css'  id="style-base">:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, "Segoe UI Emoji", "SF Pro", sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p *, #write.first-line-indent svg * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+img:not([height]) { height: auto; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+svg sub, svg sup { position: static; }
+.nodeLabel p { padding-right: 2px; padding-left: 2px; }
+.typora-export .nodeLabel p { padding-right: 0px; padding-left: 0px; }
+foreignobject { overflow: visible; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+li p { orphans: 1; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; position: relative; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: medium !important; border-style: none !important; border-color: currentcolor !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.mermaid-svg { margin: auto; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+</style>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&amp;subset=latin,latin-ext' type='text/css' />
+<style type='text/css'  id="style-theme_css">:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', 'SF Pro', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    pre {
+        page-break-inside: avoid;
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.mac-os #write{
+    caret-color: AccentColor;
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+</style>
+<style type='text/css'  id="style-lp">ol, ul {padding-left: 40px}</style>
+
+<title>appendix_blimp_glossary</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='blimp语言学概念导读'><span>BLiMP语言学概念导读</span></h1><blockquote><p><span>《BLiMP如何测试大模型的英语语法能力》配套附录</span><br/><span>面向没有语言学专业背景的读者</span></p></blockquote><p><span>BLiMP的题目通常只有两个句子，真正考查的却可能是主谓一致、动词配价、反身代词约束或长距离依存。这个附录不要求读者先掌握一套句法理论，而是把每类现象还原为三个可观察的问题：</span><strong><span>句子中哪两个部分发生关系，正负例改变了什么，为什么这一改变会影响可接受性。</span></strong></p><p><span>文中的星号“*”表示：按照BLiMP采用的主流美国英语标准，该句被设为不可接受的负例。星号不是说现实中绝不可能听到这种表达，也不等于句子“完全没有意义”。</span></p><h2 id='一先理解blimp怎样出题'><span>一、先理解BLiMP怎样出题</span></h2><h3 id='1-语法可接受性'><span>1. 语法可接受性</span></h3><p><span>语法可接受性（grammatical acceptability）是母语者对一个句子能否作为本族语自然表达的判断。它与“能否猜出意思”不同，也不完全等同于是否符合学校语法规范。</span></p><blockquote><p><span>These casseroles </span><strong><span>disgust</span></strong><span> Kayla.</span><br/><span>*These casseroles </span><strong><span>disgusts</span></strong><span> Kayla.</span></p></blockquote><p><span>两句都能让人猜到意思；差别在于复数主语 </span><em><span>these casseroles</span></em><span> 要求动词使用 </span><em><span>disgust</span></em><span>，而不是第三人称单数形式 </span><em><span>disgusts</span></em><span>。</span></p><h3 id='2-正例负例与标准答案'><span>2. 正例、负例与标准答案</span></h3><ul><li><p><strong><span>正例</span></strong><span>：模板按照目标语法规则生成的可接受句。</span></p></li><li><p><strong><span>负例</span></strong><span>：模板只改变关键条件后生成的不可接受句。</span></p></li><li><p><strong><span>标准答案</span></strong><span>：数据生成程序根据模板预先写入的正负标签，不是模型自动猜出的标签。</span></p></li></ul><p><span>BLiMP又让英语母语者抽样判断，以检验人工判断是否支持这些模板标签。因此，“人工抽样一致率”表示母语者判断与模板标准答案相符的比例，不表示人类做完了全部67,000组题。</span></p><h3 id='3-最小对比对'><span>3. 最小对比对</span></h3><p><span>最小对比对（minimal pair）由一条正例和一条负例组成。两句尽量使用相同词汇和相同结构，只改变决定可接受性的因素。这样，模型若偏向正例，研究者可以较有针对性地解释模型利用了什么语法线索。</span></p><p><span>“最小”是实验控制目标，不保证每组句子在表面上只差一个词。某些题需要同时调整词形、语序或空位，才能维持目标对立。</span></p><h3 id='4-语言现象问题模板与测试题'><span>4. 语言现象、问题模板与测试题</span></h3><p><span>BLiMP分为三个层级：</span></p><blockquote><p><strong><span>12类语言现象</span></strong><span> → </span><strong><span>67个问题模板</span></strong><span> → </span><strong><span>每个模板1,000组测试题</span></strong></p></blockquote><p><span>原论文把一种具体测试类型称为 </span><em><span>paradigm</span></em><span>（范式）。为避免把“理论范式”和“出题类型”混为一谈，正文与本附录统一称为</span><strong><span>问题模板</span></strong><span>。例如，“主谓一致”是一类语言现象；“规则复数主语与动词的一致”“含关系从句干扰项的一致”是两个不同的问题模板。</span></p><h3 id='5-模型怎样得分'><span>5. 模型怎样得分</span></h3><p><span>原始BLiMP分别计算正例和负例的整句概率。若模型赋予正例更高的概率，这一组题记1分；否则记0分。这个分数衡量模型能否稳定地区分正负例，不直接说明模型能否说出规则，更不能单独证明模型采用了与人相同的分析过程。</span></p><h2 id='二12类语言现象'><span>二、12类语言现象</span></h2><h3 id='1-照应语一致anaphor-agreement'><span>1. 照应语一致（anaphor agreement）</span></h3><p><strong><span>普通读者看到的现象：</span></strong><span> </span><em><span>herself、himself、themselves</span></em><span> 要与所指的人或事物相配。</span><br/><strong><span>语言学分析：</span></strong><span> 英语反身代词要与先行词在人称、数和传统语法性别特征上保持一致。</span></p><blockquote><p><span>Katherine can&#39;t help </span><strong><span>herself</span></strong><span>.</span><br/><span>*Katherine can&#39;t help </span><strong><span>himself</span></strong><span>.</span></p></blockquote><p><span>这里的反身代词指回 </span><em><span>Katherine</span></em><span>；BLiMP把 </span><em><span>herself</span></em><span> 设为正例。该类只有2个问题模板，分别考查性别一致和数一致。它不等于完整的照应理论；反身代词能否由某个名词短语约束，还要看后文“约束”中的结构条件。</span></p><h3 id='2-论元结构argument-structure'><span>2. 论元结构（argument structure）</span></h3><p><strong><span>普通读者看到的现象：</span></strong><span> 有些动词后面必须带宾语，有些不能直接带宾语；不同动词对主语、宾语的语义类型也有要求。</span><br/><strong><span>语言学分析：</span></strong><span> 谓词规定自己可以或必须结合哪些论元，以及这些论元承担何种语义角色。BLiMP也把部分语义选择限制（s-selection）归入这一组。</span></p><blockquote><p><span>Rose wasn&#39;t </span><strong><span>disturbing Mark</span></strong><span>.</span><br/><span>*Rose wasn&#39;t </span><strong><span>boasting Mark</span></strong><span>.</span></p></blockquote><p><em><span>disturb</span></em><span>可以直接带宾语，</span><em><span>boast</span></em><span>通常不能按同一结构直接带人名宾语。9个问题模板还涉及及物、不及物、被动、使役—起始交替和论元省略。生成句有时语义生硬；测试重点是动词许可的结构，不是事件是否符合常识。</span></p><h3 id='3-约束binding'><span>3. 约束（binding）</span></h3><p><strong><span>普通读者看到的现象：</span></strong><span> </span><em><span>himself、herself</span></em><span>不能任意指向句中的任何人。</span><br/><strong><span>语言学分析：</span></strong><span> 反身代词通常必须在适当的局部结构域内，由一个与它匹配且在结构上统领它的先行词约束。BLiMP主要考查约束理论的原则A。</span></p><blockquote><p><span>Carla explained that Samuel discussed </span><strong><span>her</span></strong><span>.</span><br/><span>*Carla explained that Samuel discussed </span><strong><span>herself</span></strong><span>.</span></p></blockquote><p><span>若 </span><em><span>herself</span></em><span> 指 </span><em><span>Carla</span></em><span>，二者隔着一个有限从句，超出了该题设定的局部约束域；普通代词 </span><em><span>her</span></em><span> 则可以。7个问题模板分别改变结构统领、格、局部域和移位后的解释位置。它没有系统考查代词与指称表达式对应的原则B、原则C。</span></p><h3 id='4-控制与提升control-and-raising'><span>4. 控制与提升（control and raising）</span></h3><p><strong><span>普通读者看到的现象：</span></strong><span> 一些动词、形容词后的不定式主语虽然没有读出来，却与主句成分有固定关系；形式主语 </span><em><span>there</span></em><span>、</span><em><span>it</span></em><span> 也不是到处都能出现。</span><br/><strong><span>语言学分析：</span></strong><span> 提升结构中的名词短语被分析为从嵌入位置移到更高位置，或形式成分占据该位置；控制结构中的未明说主语则由主句论元确定所指。</span></p><blockquote><p><span>There is </span><strong><span>likely</span></strong><span> to be a cat outside.</span><br/><span>*There is </span><strong><span>willing</span></strong><span> to be a cat outside.</span></p></blockquote><p><em><span>likely</span></em><span>一类提升谓词可与无具体所指的 </span><em><span>there</span></em><span> 结合；</span><em><span>willing</span></em><span>一类控制谓词要求一个能够“愿意”的有意志主体。5个问题模板使用存在式 </span><em><span>there</span></em><span>、形式 </span><em><span>it</span></em><span> 和 tough结构区分相关句法。它们测的是若干诊断环境，而不是控制与提升的全部类型。</span></p><h3 id='5-限定词---名词一致determiner--noun-agreement'><span>5. 限定词—名词一致（determiner–noun agreement）</span></h3><p><strong><span>普通读者看到的现象：</span></strong><span> </span><em><span>this/that</span></em><span>通常配单数名词，</span><em><span>these/those</span></em><span>通常配复数名词。</span><br/><strong><span>语言学分析：</span></strong><span> 指示限定词和中心名词之间存在数特征一致；形容词插入两者之间也不取消这一关系。</span></p><blockquote><p><span>Raymond is selling </span><strong><span>this sketch</span></strong><span>.</span><br/><span>*Raymond is selling </span><strong><span>this sketches</span></strong><span>.</span></p></blockquote><p><span>8个问题模板交叉改变限定词、名词、规则或不规则复数，以及中间是否带形容词。它们主要检验局部数一致，不覆盖冠词选择、可数性和限定词语义等更广问题。</span></p><h3 id='6-省略ellipsis'><span>6. 省略（ellipsis）</span></h3><p><strong><span>普通读者看到的现象：</span></strong><span> 后一句可以省掉已经出现过的名词，但省略部分的内部结构仍受限制。</span><br/><strong><span>语言学分析：</span></strong><span> BLiMP只测试名词短语内部的N-bar省略：数量词后未说出的名词性成分，需要从前文恢复；形容词是否随之省略会改变可接受性。</span></p><blockquote><p><span>Brad passed one </span><strong><span>big museum</span></strong><span>, and Eva passed several </span><strong><span>[big museums]</span></strong><span>.</span><br/><span>*Brad passed one </span><strong><span>museum</span></strong><span>, and Eva passed several </span><strong><span>big [museums]</span></strong><span>.</span></p></blockquote><p><span>方括号表示听者需要恢复但没有读出的内容。2个问题模板改变形容词位于先行项还是残余项。BLiMP没有覆盖动词短语省略、空缺、替代等其他重要省略现象，因此“省略得分”不能代表模型的全部省略能力。</span></p><h3 id='7-填充语---空位依存filler--gap-dependency'><span>7. 填充语—空位依存（filler–gap dependency）</span></h3><p><strong><span>普通读者看到的现象：</span></strong><span> 疑问词或关系词出现在句子前部时，后面通常要有一个本可放置相应成分的位置。</span><br/><strong><span>语言学分析：</span></strong><span> 前置的填充语与句内未发音的空位形成依存关系；既不能“有填充语而没有空位”，也不能在需要填充语时只留下空位。</span></p><blockquote><p><span>Brett knew </span><strong><span>what</span></strong><span> many waiters find </span><strong><span>__</span></strong><span>.</span><br/><span>*Brett knew </span><strong><span>that</span></strong><span> many waiters find </span><strong><span>__</span></strong><span>.</span></p></blockquote><p><span>双下划线是分析时标出的空位，不是数据中的可见字符。7个问题模板比较 </span><em><span>wh</span></em><span> 成分和 </span><em><span>that</span></em><span>、主语空位和宾语空位，以及局部和较长距离的依存。它们检测依存是否成对出现；依存能否跨越特殊边界，则由“岛效应”进一步考查。</span></p><h3 id='8-不规则形式irregular-forms'><span>8. 不规则形式（irregular forms）</span></h3><p><strong><span>普通读者看到的现象：</span></strong><span> 英语不规则动词的过去式、过去分词不能只靠统一后缀推导。</span><br/><strong><span>语言学分析：</span></strong><span> 词项需要存储或学习特定的屈折形式，并在定语和谓语环境中选择正确形式。</span></p><blockquote><p><span>The </span><strong><span>hidden</span></strong><span> offspring aren&#39;t confident.</span><br/><span>*The </span><strong><span>hid</span></strong><span> offspring aren&#39;t confident.</span></p></blockquote><p><span>2个问题模板分别考查过去分词作形容词和过去时/过去分词在动词位置的选择。这里的“不规则形式”范围很窄，不包括不规则比较级、派生形态或构词能力。</span></p><h3 id='9-岛效应island-effects'><span>9. 岛效应（island effects）</span></h3><p><strong><span>普通读者看到的现象：</span></strong><span> 疑问词与后面空位可以相隔很远，但并非任何句法成分内部都允许把一部分抽出来。</span><br/><strong><span>语言学分析：</span></strong><span> 某些结构是抽取的“岛”；填充语—空位依存跨越这些边界时，可接受性显著下降。</span></p><blockquote><p><span>Who did Derek hug </span><strong><span>__</span></strong><span> after shocking Richard?</span><br/><span>*Who did Derek hug Richard after shocking </span><strong><span>__</span></strong><span>?</span></p></blockquote><p><span>正例的空位是主句动词 </span><em><span>hug</span></em><span> 的宾语；负例试图从 </span><em><span>after</span></em><span> 引导的附加语从句中抽取宾语。8个问题模板还涉及复杂名词短语、并列结构、左分支、句子主语和 </span><em><span>wh</span></em><span> 岛。岛效应常受语境、加工负担和方言影响；二选一模板只能给出受控诊断，不能消除这些理论争议。</span></p><h3 id='10-否定极性项许可npi-licensing'><span>10. 否定极性项许可（NPI licensing）</span></h3><p><strong><span>普通读者看到的现象：</span></strong><span> </span><em><span>ever、any</span></em><span>等词在否定句、某些疑问句或 </span><em><span>only</span></em><span> 环境中较自然，在普通肯定句中往往不自然。</span><br/><strong><span>语言学分析：</span></strong><span> 否定极性项（negative polarity item, NPI）需要合适的许可成分，而且通常要处在该成分的语义作用域内。</span></p><blockquote><p><span>Teresa had </span><strong><span>not ever</span></strong><span> sold a movie theater.</span><br/><span>*Teresa had </span><strong><span>probably ever</span></strong><span> sold a movie theater.</span></p></blockquote><p><span>否定词 </span><em><span>not</span></em><span>许可 </span><em><span>ever</span></em><span>，频率副词 </span><em><span>probably</span></em><span>不提供同样条件。7个问题模板分别操纵否定、矩阵疑问句、</span><em><span>only</span></em><span>及其作用域。NPI许可同时涉及句法、语义和语用；BLiMP的标签体现特定受控语境，不宜解释为所有语境中的绝对规则。</span></p><h3 id='11-量词quantifiers'><span>11. 量词（quantifiers）</span></h3><p><strong><span>普通读者看到的现象：</span></strong><span> </span><em><span>all、each、no、at most</span></em><span>等数量表达在不同句型中的分布和解释并不相同。</span><br/><strong><span>语言学分析：</span></strong><span> 量词受存在句结构、单调性、作用域和数量表达兼容关系的约束。</span></p><blockquote><p><span>There was </span><strong><span>a documentary</span></strong><span> irritating Allison.</span><br/><span>*There was </span><strong><span>each documentary</span></strong><span> irritating Allison.</span></p></blockquote><p><span>英语存在句的名词短语通常表现出“确定性效应”：不定名词短语较自然，</span><em><span>each</span></em><span>一类强量词通常受限。4个问题模板另考查 </span><em><span>all</span></em><span> 与存在句、</span><em><span>no</span></em><span> 与 </span><em><span>fewer than/at most</span></em><span> 的组合。后两类判断带有明显语义和语用成分，不应简单称为词序语法题。</span></p><h3 id='12-主谓一致subject--verb-agreement'><span>12. 主谓一致（subject–verb agreement）</span></h3><p><strong><span>普通读者看到的现象：</span></strong><span> 单数或复数主语要求相应的限定动词形式；主语内部出现另一个名词时，不能被它“带偏”。</span><br/><strong><span>语言学分析：</span></strong><span> 限定动词与句法主语在人称和数特征上保持一致；线性上更近的干扰名词可能造成一致吸引错误。</span></p><blockquote><p><span>A niece of most senators </span><strong><span>hasn&#39;t</span></strong><span> descended most slopes.</span><br/><span>*A niece of most senators </span><strong><span>haven&#39;t</span></strong><span> descended most slopes.</span></p></blockquote><p><span>真正的主语中心语是单数 </span><em><span>niece</span></em><span>，介词短语中的复数 </span><em><span>senators</span></em><span>不是主语。6个问题模板包括规则/不规则复数，以及关系名词和关系从句中的干扰项。BLiMP采用主流美国英语标准；某些非标准变体中的一致形式可能与模板标签不同。</span></p><h2 id='三跨类别常见术语'><span>三、跨类别常见术语</span></h2><figure class='table-figure'><table><thead><tr><th><span>术语</span></th><th><span>简明解释</span></th><th><span>在题目中怎样识别</span></th></tr></thead><tbody><tr><td><span>先行词（antecedent）</span></td><td><span>为代词或反身代词提供所指的成分</span></td><td><span>找出 </span><em><span>herself</span></em><span>“指回”谁</span></td></tr><tr><td><span>照应语（anaphor）</span></td><td><span>依赖句中另一成分确定所指的表达式；BLiMP主要指反身代词</span></td><td><em><span>himself, herself, themselves</span></em></td></tr><tr><td><span>结构统领（c-command）</span></td><td><span>句法树上的结构关系，不等于“在前面”或“离得近”</span></td><td><span>主句主语可统领谓语内部成分，嵌在主语内部的名词通常不能反向统领主句宾语</span></td></tr><tr><td><span>局部域（local domain）</span></td><td><span>反身代词通常必须在其中找到先行词的最小结构范围</span></td><td><span>检查反身代词和先行词是否处在同一局部从句</span></td></tr><tr><td><span>论元（argument）</span></td><td><span>谓词在意义和句法上选择的参与者</span></td><td><span>谁做事、事情影响谁、动词后是否必须有宾语</span></td></tr><tr><td><span>配价/及物性</span></td><td><span>谓词可带多少、哪类论元的结构属性</span></td><td><em><span>disturb someone</span></em><span>可以，</span><em><span>boast someone</span></em><span>通常不可以</span></td></tr><tr><td><span>形式成分（expletive）</span></td><td><span>占据句法位置但不指称具体对象的 </span><em><span>there</span></em><span> 或 </span><em><span>it</span></em></td><td><em><span>There seems to be…; It seems that…</span></em></td></tr><tr><td><span>填充语（filler）</span></td><td><span>出现在依存关系前端、对应后方空位的成分</span></td><td><span>前置的 </span><em><span>who, what, which book</span></em></td></tr><tr><td><span>空位（gap）</span></td><td><span>句法上需要、语音上未读出的论元位置</span></td><td><em><span>What did Pat buy __?</span></em><span> 中 </span><em><span>buy</span></em><span> 后的位置</span></td></tr><tr><td><span>抽取（extraction）</span></td><td><span>填充语与原位置分离而形成远距离依存的现象</span></td><td><span>疑问词前置、关系词与从句内空位对应</span></td></tr><tr><td><span>岛（island）</span></td><td><span>限制成分从其内部抽取的结构</span></td><td><span>附加语从句、复杂名词短语、部分并列结构等</span></td></tr><tr><td><span>许可成分（licensor）</span></td><td><span>使某种受限表达式可以出现的成分</span></td><td><em><span>not</span></em><span>、某些疑问结构或 </span><em><span>only</span></em><span> 可许可 </span><em><span>ever</span></em></td></tr><tr><td><span>作用域（scope）</span></td><td><span>一个运算成分在解释上影响的范围</span></td><td><em><span>not/only</span></em><span> 是否在结构和意义上覆盖 </span><em><span>ever</span></em></td></tr><tr><td><span>省略先行项</span></td><td><span>为未读出的内容提供恢复依据的已出现表达式</span></td><td><span>前一分句的 </span><em><span>big museum</span></em><span> 帮助理解后一分句的 </span><em><span>several</span></em></td></tr><tr><td><span>一致吸引（agreement attraction）</span></td><td><span>非主语名词干扰主谓一致判断</span></td><td><em><span>the key to the cabinets is/</span></em><span>are* 中的 </span><em><span>cabinets</span></em></td></tr></tbody></table></figure><h2 id='四怎样使用这个附录'><span>四、怎样使用这个附录</span></h2><p><span>阅读正文或题目索引时，可以按以下顺序判断：</span></p><ol start='' ><li><p><span>先找正负例中真正改变的词形、成分或空位；</span></p></li><li><p><span>再确定这一改变涉及哪两个成分之间的关系；</span></p></li><li><p><span>最后区分它属于局部形式匹配、动词结构要求、长距离依存，还是语义许可条件。</span></p></li></ol><p><span>对于争议较大或高度依赖语境的例子，应把BLiMP标签理解为一个受控实验假设，而不是英语使用的最终裁决。若希望逐项查阅67个问题模板，可参见同目录下的《BLiMP 67个问题模板索引》。</span></p><p>&nbsp;</p><p><a href='.blimp_67_templates.html'><span>BLiMP 67个问题模板索引</span></a></p><p>&nbsp;</p><h2 id='资料来源'><span>资料来源</span></h2><ol start='' ><li><p><span>Warstadt et al. 2020. </span><em><span>BLiMP: The Benchmark of Linguistic Minimal Pairs for English</span></em><span>.</span><br/><a href='https://aclanthology.org/2020.tacl-1.25/' target='_blank' class='url'>https://aclanthology.org/2020.tacl-1.25/</a></p></li><li><p><span>BLiMP官方数据、模型结果与人工验证结果。</span><br/><a href='https://github.com/alexwarstadt/blimp' target='_blank' class='url'>https://github.com/alexwarstadt/blimp</a></p></li><li><p><span>BLiMP官方范式补充材料。</span><br/><a href='https://github.com/alexwarstadt/blimp/blob/master/supplemental_materials/BLiMP_Paradigms.pdf' target='_blank' class='url'>https://github.com/alexwarstadt/blimp/blob/master/supplemental_materials/BLiMP_Paradigms.pdf</a></p></li></ol><p>&nbsp;</p></div></div>
+</body>
+</html>
